@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by AEGONUSA (AEGONUSA) -->
+<xsd:schema xmlns="http://ACORD.org/Standards/Life/2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ACORD.org/Standards/Life/2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="TCM_ACORD_OLifEExtensionWEB.xsd"/>
+	<xsd:element name="TXLife" type="TXLife_Type"/>
+	<xsd:complexType name="TXLife_Type">
+		<xsd:sequence>
+			<xsd:element ref="TXLifeRequest"/>
+			<xsd:element ref="TXLifeResponse"/>
+		</xsd:sequence>
+		<xsd:attribute name="Version" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:element name="TXLifeRequest" type="TXLifeRequest_Type"/>
+	<xsd:complexType name="TXLifeRequest_Type">
+		<xsd:sequence>
+			<xsd:element ref="TransRefGUID"/>
+			<xsd:element ref="TransType"/>
+			<xsd:element ref="TransSubType" minOccurs="0"/>
+			<xsd:element ref="TransExeDate" minOccurs="0"/>
+			<xsd:element ref="TransExeTime" minOccurs="0"/>
+			<xsd:element ref="TransEffDate" minOccurs="0"/>
+			<xsd:element ref="InquiryLevel" minOccurs="0"/>
+			<xsd:element ref="InquiryView" minOccurs="0"/>
+			<xsd:element ref="MaxRecords" minOccurs="0"/>
+			<xsd:element ref="StartDate" minOccurs="0"/>
+			<xsd:element ref="EndDate" minOccurs="0"/>
+			<xsd:element ref="NoResponseOK" minOccurs="0"/>
+			<xsd:element ref="TestIndicator" minOccurs="0"/>
+			<xsd:element ref="OLifE"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="PrimaryObjectID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="TXLifeResponse" type="TXLifeResponse_Type"/>
+	<xsd:complexType name="TXLifeResponse_Type">
+			<xsd:sequence>
+				<xsd:element ref="TransRefGUID"/>
+				<xsd:element ref="TransType"/>
+				<xsd:element ref="TransSubType" minOccurs="0"/>
+				<xsd:element ref="TransExeDate"/>
+				<xsd:element ref="TransExeTime"/>
+				<xsd:element ref="InquiryLevel" minOccurs="0"/>
+				<xsd:element ref="InquiryView" minOccurs="0"/>
+				<xsd:element ref="MaxRecords" minOccurs="0"/>
+				<xsd:element ref="PendingResponseOK" minOccurs="0"/>
+				<xsd:element ref="NoResponseOK" minOccurs="0"/>
+				<xsd:element ref="TestIndicator" minOccurs="0"/>
+				<xsd:element ref="TransactionContext" minOccurs="0"/>
+				<xsd:element ref="TransResult"/>
+				<xsd:element ref="TransEffDate" minOccurs="0"/>
+				<xsd:element ref="OLifE" minOccurs="0"/>
+				<xsd:element ref="OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:ID"/>
+			<xsd:attribute name="PrimaryObjectID" type="xsd:IDREF" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ACORD_TYPE_CODE">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="tc" type="ACORD_TYPE_CODE_TC" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ACORD_TYPE_CODE_TC">
+		<xsd:restriction base="xsd:nonNegativeInteger"/>
+	</xsd:simpleType>
+	<xsd:element name="OLifE" type="OLifE_Type"/>
+	<xsd:complexType name="OLifE_Type">
+		<xsd:sequence>
+			<xsd:element ref="CurrentLanguage" minOccurs="0"/>				
+				<xsd:element ref="Holding" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="Party" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="Relation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="Activity" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="FinancialStatement" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="PolicyProduct" minOccurs="0" maxOccurs="unbounded"/>				
+				<xsd:element ref="SystemMessage" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="OLifEExtension"/>
+		</xsd:sequence>
+		<xsd:attribute name="Version" type="xsd:string"/>
+	</xsd:complexType>	
+	<xsd:element name="Holding" type="Holding_Type"/>
+	<xsd:complexType name="Holding_Type">
+		<xsd:sequence>
+			<xsd:element ref="HoldingKey" minOccurs="0"/>
+			<xsd:element ref="HoldingSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="AccountDesignation" minOccurs="0"/>
+			<xsd:element ref="HoldingTypeCode"/>
+			<xsd:element ref="CurrencyTypeCode" minOccurs="0"/>
+			<xsd:element ref="CostBasis" minOccurs="0"/>
+			<xsd:element ref="AsOfDate" minOccurs="0"/>
+			<xsd:element ref="LastFinActivityDate" minOccurs="0"/>
+			<xsd:element ref="LastNonFinActivityDate" minOccurs="0"/>
+			<xsd:element ref="LastAnniversaryDate" minOccurs="0"/>
+			<xsd:element ref="NextAnniversaryDate" minOccurs="0"/>
+			<xsd:element ref="HoldingForm" minOccurs="0"/>
+			<xsd:element ref="AssignmentCode" minOccurs="0"/>
+			<xsd:element ref="QualifiedCode" minOccurs="0"/>
+			<xsd:element ref="DistributorClientAcctNum" minOccurs="0"/>
+			<xsd:element ref="CommissionHoldInd" minOccurs="0"/>
+			<xsd:element ref="Policy" minOccurs="0"/>
+			<xsd:element ref="Investment" minOccurs="0"/>
+			<xsd:element ref="Attachment" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Arrangement" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Loan" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Banking" minOccurs="0"/>
+			<xsd:element ref="Authorization" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Fee" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="RestrictionInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="Arrangement" type="Arrangement_Type"/>
+	<xsd:complexType name="Arrangement_Type">
+		<xsd:sequence>
+			<xsd:element ref="ArrangementSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="ProductCode" minOccurs="0"/>
+			<xsd:element ref="ArrMode" minOccurs="0"/>
+			<xsd:element ref="ArrType"/>
+			<xsd:element ref="ArrSubType" minOccurs="0"/>
+			<xsd:element ref="ArrStatus" minOccurs="0"/>
+			<xsd:element ref="NextActivityDate" minOccurs="0"/>
+			<xsd:element ref="StartDate" minOccurs="0"/>
+			<xsd:element ref="DayOfMonth" minOccurs="0"/>
+			<xsd:element ref="EndDate" minOccurs="0"/>
+			<xsd:element ref="NumOfModalOccurrences" minOccurs="0"/>
+			<xsd:element ref="ModalAmt" minOccurs="0"/>
+			<xsd:element ref="ModalPct" minOccurs="0"/>
+			<xsd:element ref="PaymentForm" minOccurs="0"/>
+			<xsd:element ref="PlanName" minOccurs="0"/>
+			<xsd:element ref="LastActivityDate" minOccurs="0"/>
+			<xsd:element ref="SourceTransferAmtType" minOccurs="0"/>
+			<xsd:element ref="DestTransferAmtType" minOccurs="0"/>
+			<xsd:element ref="ArrSource" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="ArrDestination" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="TaxWithholding" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Fee" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Arrangement_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="ArrMode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ArrType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ArrStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="NextActivityDate" type="xsd:date"/>
+	<xsd:element name="DayOfMonth" type="xsd:integer"/>
+	<xsd:element name="NumOfModalOccurrences" type="xsd:integer"/>
+	<xsd:element name="ModalAmt" type="xsd:decimal"/>
+	<xsd:element name="LastActivityDate" type="xsd:date"/>
+	<xsd:element name="SourceTransferAmtType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="DestTransferAmtType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ArrDestination" type="ArrDestination_Type"/>
+	<xsd:complexType name="ArrDestination_Type">
+		<xsd:sequence>
+			<xsd:element ref="AccountNumber" minOccurs="0"/>
+			<xsd:element ref="TransferAmt" minOccurs="0"/>
+			<xsd:element ref="TransferPct" minOccurs="0"/>
+			<xsd:element ref="PaymentForm" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="HoldingID" type="xsd:IDREF"/>
+		<xsd:attribute name="SubAcctID" type="xsd:IDREF"/>
+		<xsd:attribute name="PaymentPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankingInfoID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="TransferAmt" type="xsd:decimal"/>
+	<xsd:element name="ArrSource" type="ArrSource_Type"/>
+	<xsd:complexType name="ArrSource_Type">
+		<xsd:sequence>
+			<xsd:element ref="TransferAmt" minOccurs="0"/>
+			<xsd:element ref="TransferPct" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="SubAcctID" type="xsd:IDREF"/>
+		<xsd:attribute name="PaymentPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankingInfoID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="HoldingID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="TransferPct" type="xsd:double"/>
+	<xsd:element name="Carrier" type="Carrier_Type"/>
+	<xsd:complexType name="Carrier_Type">
+		<xsd:sequence>
+			<xsd:element ref="CarrierCode"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="Party" type="Party_Type"/>
+	<xsd:complexType name="Party_Type">
+		<xsd:sequence>
+			<xsd:element ref="PartyTypeCode"/>
+			<xsd:element ref="PartyKey" minOccurs="0"/>
+			<xsd:element ref="PartySysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="FullName" minOccurs="0"/>
+			<xsd:element ref="GovtID" minOccurs="0"/>
+			<xsd:element ref="GovtIDTC" minOccurs="0"/>
+			<xsd:element ref="ResidenceState" minOccurs="0"/>
+			<xsd:element ref="EstTotAssetsAmt" minOccurs="0"/>
+			<xsd:choice>
+				<xsd:element ref="Person"/>
+				<xsd:element ref="Organization"/>
+			</xsd:choice>
+			<xsd:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Phone" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Carrier" minOccurs="0"/>
+			<xsd:element ref="Producer" minOccurs="0"/>
+			<xsd:element ref="URL" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="PartialIdentification" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Party_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="Phone" type="Phone_Type"/>
+	<xsd:complexType name="Phone_Type">
+		<xsd:sequence>
+			<xsd:element ref="AreaCode" minOccurs="0"/>
+			<xsd:element ref="DialNumber" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="AreaCode" type="xsd:string"/>
+	<xsd:element name="DialNumber" type="xsd:string"/>
+	<xsd:element name="PartialIdentification" type="PartialIdentification_Type"/>
+	<xsd:complexType name="PartialIdentification_Type">
+		<xsd:sequence>
+			<xsd:element ref="IdentificationPart"/>
+			<xsd:element ref="PartialIDType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="IdentificationPart" type="xsd:string"/>
+	<xsd:element name="PartialIDType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PolicyProduct" type="PolicyProduct_Type"/>
+	<xsd:complexType name="PolicyProduct_Type">
+		<xsd:sequence>
+			<xsd:element ref="CusipNum" minOccurs="0"/>
+			<xsd:element ref="AnnuityProduct" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="CusipNum" type="xsd:string"/>
+	<xsd:element name="AnnuityProduct" type="AnnuityProduct_Type"/>
+	<xsd:complexType name="AnnuityProduct_Type">
+		<xsd:sequence>
+			<xsd:element ref="FeatureProduct" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="FeatureProduct" type="FeatureProduct_Type"/>
+	<xsd:complexType name="FeatureProduct_Type">
+		<xsd:sequence>
+			<xsd:element ref="FeatureOptProduct" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="FeatureOptProduct" type="FeatureOptProduct_Type"/>
+	<xsd:complexType name="FeatureOptProduct_Type">
+		<xsd:sequence>
+			<xsd:element ref="ProductCode" minOccurs="0"/>
+			<xsd:element ref="Name" minOccurs="0"/>
+			<xsd:element ref="Description" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="ProductCode" type="xsd:string"/>
+	<xsd:element name="Name" type="xsd:string"/>
+	<xsd:element name="Description" type="xsd:string"/>
+	<xsd:element name="Relation" type="Relation_Type"/>
+	<xsd:complexType name="Relation_Type">
+		<xsd:sequence>
+			<xsd:element ref="OriginatingObjectType" minOccurs="0"/>
+			<xsd:element ref="RelatedObjectType"/>
+			<xsd:element ref="RelationRoleCode"/>
+			<xsd:element ref="RelationDescription" minOccurs="0"/>
+			<xsd:element ref="InterestPercent" minOccurs="0"/>
+			<xsd:element ref="VolumeSharePct" minOccurs="0"/>
+			<xsd:element ref="BeneficiarySeqNum" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="OriginatingObjectID" type="xsd:IDREF"/>
+		<xsd:attribute name="RelatedObjectID" type="xsd:IDREF" use="required"/>
+	</xsd:complexType>
+	<xsd:element name="RelatedObjectType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RelationDescription" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Activity" type="Activity_Type"/>
+	<xsd:complexType name="Activity_Type">
+		<xsd:sequence>
+			<xsd:element ref="ActivityTypeCode" minOccurs="0"/>
+			<xsd:element ref="ActivityStatus" minOccurs="0"/>
+			<xsd:element ref="StartDate" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="HoldingID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="FinancialStatement" type="FinancialStatement_Type"/>
+	<xsd:complexType name="FinancialStatement_Type">
+		<xsd:sequence>
+			<xsd:element ref="StatementType" minOccurs="0"/>
+			<xsd:element ref="StatementBasis" minOccurs="0"/>
+			<xsd:element ref="StatementDate" minOccurs="0"/>
+			<xsd:element ref="PolicyStatement" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="CarrierPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="MailToPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="RemittancePartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="MailingAddressID" type="xsd:IDREF"/>
+		<xsd:attribute name="InvoicerPartyID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="StatementDate" type="xsd:date"/>
+	<xsd:element name="StatementType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PolicyStatement" type="PolicyStatement_Type"/>
+	<xsd:complexType name="PolicyStatement_Type">
+		<xsd:sequence>
+			<xsd:element ref="TotalAdjustmentAmt" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="HoldingID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="TotalAdjustmentAmt" type="xsd:decimal"/>
+	<xsd:element name="Authorization" type="Authorization_Type"/>
+	<xsd:complexType name="Authorization_Type">
+		<xsd:sequence>
+			<xsd:element ref="AuthorizationEntityCC" minOccurs="0"/>
+			<xsd:element ref="AuthorizationTransaction" minOccurs="0"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="AuthorizationEntityCC" type="AuthorizationEntityCC_Type"/>
+	<xsd:complexType name="AuthorizationEntityCC_Type">
+		<xsd:sequence>
+			<xsd:element ref="AuthorizationEntity" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AuthorizationEntity" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Banking" type="Banking_Type"/>
+	<xsd:complexType name="Banking_Type">
+		<xsd:sequence>
+			<xsd:element ref="BankAcctType" minOccurs="0"/>
+			<xsd:element ref="AccountNumber" minOccurs="0"/>
+			<xsd:element ref="RoutingNum" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="FinancialInstitutionPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="AppliesToPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="MailingAddressID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="BankAcctType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AccountNumber" type="xsd:string"/>
+	<xsd:element name="RoutingNum" type="xsd:string"/>
+	<xsd:element name="Fee" type="Fee_Type"/>
+	<xsd:complexType name="Fee_Type">
+		<xsd:sequence>
+			<xsd:element ref="FeeType" minOccurs="0"/>
+			<xsd:element ref="FeeMode" minOccurs="0"/>
+			<xsd:element ref="FeeAmt" minOccurs="0"/>
+			<xsd:element ref="FeePct" minOccurs="0"/>
+			<xsd:element ref="StartDate" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="FeeAmt" type="xsd:decimal"/>
+	<xsd:element name="Investment" type="Investment_Type"/>
+	<xsd:complexType name="Investment_Type">
+		<xsd:sequence>
+			<xsd:element ref="AcctNum" minOccurs="0"/>
+			<xsd:element ref="SubAccount" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- Added RoR for Website Redesign project - 30007 -->
+			<xsd:element ref="RateOfReturnInfo" minOccurs="0"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Investment_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="CarrierPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="ProductID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="SubAccount" type="SubAccount_Type"/>
+	<xsd:complexType name="SubAccount_Type">
+		<xsd:sequence>
+			<xsd:element ref="SubAccountSysKey" minOccurs="0"/>
+			<xsd:element ref="AssetClass" minOccurs="0"/>
+			<xsd:element ref="ProductCode"/>
+			<xsd:element ref="CarrierCode"/>
+			<xsd:element ref="ProductFullName" minOccurs="0"/>
+			<xsd:element ref="ProductObjective" minOccurs="0"/>
+			<xsd:element ref="CurrNumberUnits" minOccurs="0"/>
+			<xsd:element ref="CurrRate" minOccurs="0"/>
+			<xsd:element ref="UnitValue" minOccurs="0"/>
+			<xsd:element ref="TotValue"/>
+			<xsd:element ref="AllocPercent" minOccurs="0"/>
+			<xsd:element ref="InitPurchaseAmt" minOccurs="0"/>
+			<xsd:element ref="AccountNumber" minOccurs="0"/>
+			<xsd:element ref="AvailableFundsAmt" minOccurs="0"/>
+			<xsd:element ref="TransferSendAllowedInd"/>
+			<xsd:element ref="AllocChargePercent" minOccurs="0"/>
+			<xsd:element ref="CapAmt" minOccurs="0"/>
+			<xsd:element ref="CapRate" minOccurs="0"/>
+			<xsd:element ref="CapBailoutRate" minOccurs="0"/>
+			<xsd:element ref="TransferDestAllowedInd"/>
+			<xsd:element ref="FundRestrictReason" minOccurs="0"/>
+			<xsd:element ref="AdditionalInterestRateInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_SubAccount_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="PortfolioID" type="xsd:IDREF"/>
+		<xsd:attribute name="ProductID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankID" type="xsd:IDREF"/>
+		<xsd:attribute name="CarrierPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankingHoldingID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="AssetClass" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ProductFullName" type="xsd:string"/>
+	<!-- since double brings back with exponential format, it is changed to decimal -->
+	<xsd:element name="CurrNumberUnits" type="xsd:decimal"/>
+	<xsd:element name="CurrRate" type="xsd:double"/>
+	<xsd:element name="UnitValue" type="xsd:decimal"/>
+	<xsd:element name="TotValue" type="xsd:decimal"/>
+	<xsd:element name="InitPurchaseAmt" type="xsd:decimal"/>
+	<xsd:element name="AvailableFundsAmt" type="xsd:decimal"/>
+	<xsd:element name="TransferSendAllowedInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TransferDestAllowedInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AllocChargePercent" type="xsd:double"/>
+	<xsd:element name="FundRestrictReason" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="CapRate" type="xsd:integer"/>
+	<xsd:element name="CapBailoutRate" type="xsd:integer"/>
+	<xsd:element name="CapAmt" type="xsd:decimal"/>
+	<xsd:element name="RateOfReturnInfo" type="RateOfReturnInfo_Type"/>
+	<xsd:complexType name="RateOfReturnInfo_Type">
+		<xsd:sequence>
+			<xsd:element name="RateOfReturn" type="xsd:double" minOccurs="0"/>
+			<xsd:element name="StartDate" type="xsd:date"/>
+			<xsd:element name="EndDate" type="xsd:date"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AdditionalInterestRateInfo" type="AdditionalInterestRateInfo_Type"/>
+	<xsd:complexType name="AdditionalInterestRateInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="Duration" minOccurs="0"/>
+			<xsd:element ref="DurQualifier" minOccurs="0"/>
+			<xsd:element ref="InterestRate" minOccurs="0"/>
+			<xsd:element ref="StartDate" minOccurs="0"/>
+			<xsd:element ref="AccountValue" minOccurs="0"/>
+			<xsd:element name="OLifEExtension" type="TCM_AdditionalInterestRateInfo_OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="Duration" type="xsd:integer"/>
+	<xsd:element name="InterestRate" type="xsd:double"/>
+	<xsd:element name="AccountValue" type="xsd:decimal"/>
+	<xsd:element name="FinancialActivity" type="FinancialActivity_Type"/>
+	<xsd:complexType name="FinancialActivity_Type">
+		<xsd:sequence>
+			<xsd:element ref="FinancialActivitySysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="AccountingActivityType" minOccurs="0"/>
+			<xsd:element ref="FinActivityType" minOccurs="0"/>
+			<xsd:element ref="FinActivityStatus" minOccurs="0"/>
+			<xsd:element ref="Description" minOccurs="0"/>
+			<xsd:element ref="FinActivityGrossAmt" minOccurs="0"/>
+			<xsd:element ref="FinActivityNetAmt" minOccurs="0"/>
+			<xsd:element ref="FinActivityDate" minOccurs="0"/>
+			<xsd:element ref="FinEffDate" minOccurs="0"/>
+			<xsd:element ref="IntPostingRate" minOccurs="0"/>
+			<xsd:element ref="FederalTaxWithheld" minOccurs="0"/>
+			<xsd:element ref="JurisdictionTaxWithheld" minOccurs="0"/>
+			<xsd:element ref="LocalTaxWithheld" minOccurs="0"/>
+			<xsd:element ref="PreTEFRACostBasis" minOccurs="0"/>
+			<xsd:element ref="PostTEFRACostBasisAmt" minOccurs="0"/>
+			<xsd:element ref="RothIraConverIncDate" minOccurs="0"/>
+			<xsd:element ref="Payment" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="AccountingActivity" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="TaxWithholding" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Fee" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_FinancialActivity_OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="ReversalFinancialActivityID" type="xsd:IDREF"/>
+		<xsd:attribute name="AppliesToCoverageID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="AccountingActivityType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="FinActivityDate" type="xsd:date"/>
+	<xsd:element name="FinActivityGrossAmt" type="xsd:decimal"/>
+	<xsd:element name="FinActivityNetAmt" type="xsd:decimal"/>
+	<xsd:element name="FinActivityStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="FinActivityType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="FederalTaxWithheld" type="xsd:decimal"/>
+	<xsd:element name="JurisdictionTaxWithheld" type="xsd:decimal"/>
+	<xsd:element name="LocalTaxWithheld" type="xsd:decimal"/>
+	<xsd:element name="PreTEFRACostBasis" type="xsd:decimal"/>
+	<xsd:element name="PostTEFRACostBasisAmt" type="xsd:decimal"/>
+	<xsd:element name="RothIraConverIncDate" type="xsd:date"/>
+	<xsd:element name="Payment" type="Payment_Type"/>
+	<xsd:complexType name="Payment_Type">
+		<xsd:sequence>
+			<xsd:element ref="PaymentForm" minOccurs="0"/>
+			<xsd:element ref="PayeeName" minOccurs="0"/>
+			<xsd:element ref="PaymentAmt" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="PayeeID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankHoldingID" type="xsd:IDREF"/>
+		<xsd:attribute name="HoldingID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="PaymentForm" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PayeeName" type="xsd:string"/>
+	<xsd:element name="AccountingActivity" type="AccountingActivity_Type"/>
+	<xsd:complexType name="AccountingActivity_Type">
+		<xsd:sequence>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_AccountingActivity_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="AppliesToPartyID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="Loan" type="Loan_Type"/>
+	<xsd:complexType name="Loan_Type">
+		<xsd:sequence>
+			<xsd:element ref="LoanKey" minOccurs="0"/>
+			<xsd:element ref="LoanSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="LoanStatus" minOccurs="0"/>
+			<xsd:element ref="LoanAmt" minOccurs="0"/>
+			<xsd:element ref="LoanBalance" minOccurs="0"/>
+			<xsd:element ref="LoanPaymentAmt" minOccurs="0"/>
+			<xsd:element ref="LoanIntPaidToDate" minOccurs="0"/>
+			<xsd:element ref="LoanRepayDueDate" minOccurs="0"/>
+			<xsd:element ref="CumLoanIntAmt" minOccurs="0"/>
+			<xsd:element ref="LoanNumber" minOccurs="0"/>
+			<xsd:element ref="LoanOriginationDate" minOccurs="0"/>
+			<xsd:element name="OLifEExtension" type="TCM_Loan_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="LoanAmt" type="xsd:decimal"/>
+	<xsd:element name="LoanBalance" type="xsd:decimal"/>
+	<xsd:element name="LoanIntPaidToDate" type="xsd:date"/>
+	<xsd:element name="LoanPaymentAmt" type="xsd:decimal"/>
+	<xsd:element name="LoanRepayDueDate" type="xsd:date"/>
+	<xsd:element name="CumLoanIntAmt" type="xsd:decimal"/>
+	<xsd:element name="LoanStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="LoanOriginationDate" type="xsd:date"/>
+	<xsd:element name="Policy" type="Policy_Type"/>
+	<xsd:complexType name="Policy_Type">
+		<xsd:sequence>
+			<xsd:element ref="CarrierAdminSystem" minOccurs="0"/>
+			<xsd:element ref="PolNumber"/>
+			<xsd:element ref="CertificateNo" minOccurs="0"/>
+			<xsd:element ref="LineOfBusiness" minOccurs="0"/>
+			<xsd:element ref="ProductType" minOccurs="0"/>
+			<xsd:element ref="ProductCode" minOccurs="0"/>
+			<xsd:element ref="CarrierCode"/>
+			<xsd:element ref="PlanName" minOccurs="0"/>
+			<xsd:element ref="ShortName" minOccurs="0"/>
+			<xsd:element ref="MarketingName" minOccurs="0"/>
+			<xsd:element ref="PolicyStatus" minOccurs="0"/>
+			<xsd:element ref="IssueNation" minOccurs="0"/>
+			<xsd:element ref="Jurisdiction" minOccurs="0"/>
+			<xsd:element ref="PortabilityInd" minOccurs="0"/>
+			<xsd:element ref="ConvertToPrivateInd" minOccurs="0"/>
+			<xsd:element ref="TaxStatus" minOccurs="0"/>
+			<xsd:element ref="CusipNum" minOccurs="0"/>
+			<xsd:element ref="ReplacementType" minOccurs="0"/>
+			<xsd:element ref="PolicyValue" minOccurs="0"/>
+			<xsd:element ref="PolFee" minOccurs="0"/>
+			<xsd:element ref="Duration" minOccurs="0"/>
+			<xsd:element ref="EffDate" minOccurs="0"/>
+			<xsd:element ref="IssueDate" minOccurs="0"/>
+			<xsd:element ref="TermDate" minOccurs="0"/>
+			<xsd:element ref="StatusChangeDate" minOccurs="0"/>
+			<xsd:element ref="GracePeriodEndDate" minOccurs="0"/>
+			<xsd:element ref="FinalPaymentDate" minOccurs="0"/>
+			<xsd:element ref="BilledToDate" minOccurs="0"/>
+			<xsd:element ref="BillingStopDate" minOccurs="0"/>
+			<xsd:element ref="PaymentMode" minOccurs="0"/>
+			<xsd:element ref="PaymentAmt" minOccurs="0"/>
+			<xsd:element ref="PaymentMethod" minOccurs="0"/>
+			<xsd:element ref="AccountNumber" minOccurs="0"/>
+			<xsd:element ref="RoutingNumber" minOccurs="0"/>
+			<xsd:element ref="AcctHolderName" minOccurs="0"/>
+			<xsd:element ref="EFTEndDate" minOccurs="0"/>
+			<xsd:element ref="PaymentDueDate" minOccurs="0"/>
+			<xsd:element ref="LastNoticeDate" minOccurs="0"/>
+			<xsd:element ref="BeneficiaryInd" minOccurs="0"/>
+			<xsd:element ref="FreeAvailableAmt" minOccurs="0"/>
+			<xsd:element ref="DeductionDate" minOccurs="0"/>
+			<xsd:element ref="PremiumIndexRate" minOccurs="0"/>
+			<xsd:element ref="PriorPolicyStatus" minOccurs="0"/>
+			<xsd:element ref="PriorCarrierCode" minOccurs="0"/>
+			<xsd:element ref="PriorPolNumber" minOccurs="0"/>
+			<xsd:element ref="FinReportingCarrierCode" minOccurs="0"/>
+			<xsd:element ref="FinalPaymentAmt" minOccurs="0"/>
+			<xsd:element ref="TaxJurisdiction" minOccurs="0"/>
+			<xsd:element ref="TaxNation" minOccurs="0"/>
+			<xsd:element ref="Annuity" minOccurs="0"/>
+			<xsd:element ref="ApplicationInfo" minOccurs="0"/>
+			<xsd:element ref="RequirementInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="FinancialActivity" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Claim" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Policy_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="ProductID" type="xsd:IDREF"/>
+		<xsd:attribute name="CarrierPartyID" type="xsd:IDREF" use="optional"/>
+		<xsd:attribute name="BankID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankHoldingID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="CertificateNo" type="xsd:string"/>
+	<xsd:element name="LineOfBusiness" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PaymentAmt" type="xsd:decimal"/>
+	<xsd:element name="PaymentMethod" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PaymentMode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PaymentDueDate" type="xsd:date"/>
+	<xsd:element name="PolicyValue" type="xsd:decimal"/>
+	<xsd:element name="PolFee" type="xsd:decimal"/>
+	<xsd:element name="PolicyStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PortabilityInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ProductType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PremiumIndexRate" type="xsd:double"/>
+	<xsd:element name="PriorPolicyStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PriorPolNumber" type="xsd:string"/>
+	<xsd:element name="PriorCarrierCode" type="xsd:string"/>
+	<xsd:element name="PlanName" type="xsd:string"/>
+	<xsd:element name="ShortName" type="xsd:string"/>
+	<xsd:element name="IssueNation" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Jurisdiction" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ConvertToPrivateInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TaxStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ReplacementType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="IssueDate" type="xsd:date"/>
+	<xsd:element name="EFTEndDate" type="xsd:date"/>
+	<xsd:element name="StatusChangeDate" type="xsd:date"/>
+	<xsd:element name="GracePeriodEndDate" type="xsd:date"/>
+	<xsd:element name="FinalPaymentDate" type="xsd:date"/>
+	<xsd:element name="BilledToDate" type="xsd:date"/>
+	<xsd:element name="BillingStopDate" type="xsd:date"/>
+	<xsd:element name="LastNoticeDate" type="xsd:date"/>
+	<xsd:element name="DeductionDate" type="xsd:date"/>
+	<xsd:element name="FreeAvailableAmt" type="xsd:decimal"/>
+	<xsd:element name="FinReportingCarrierCode" type="xsd:string"/>
+	<xsd:element name="FinalPaymentAmt" type="xsd:decimal"/>
+	<xsd:element name="TaxJurisdiction" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TaxNation" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ApplicationInfo" type="ApplicationInfo_Type"/>
+	<xsd:complexType name="ApplicationInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="SignedDate" minOccurs="0"/>
+			<xsd:element ref="HOReceiptDate" minOccurs="0"/>
+			<xsd:element ref="HOCompletionDate" minOccurs="0"/>
+			<xsd:element name="OLifEExtension" type="TCM_ApplicationInfo_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="CasePartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="ReqPolicyDeliverToPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="SignedDate" type="xsd:date"/>
+	<xsd:element name="Annuity" type="Annuity_Type"/>
+	<xsd:complexType name="Annuity_Type">
+		<xsd:sequence>
+			<xsd:element ref="AnnuitySysKey" minOccurs="0"/>
+			<xsd:element ref="PremType" minOccurs="0"/>
+			<xsd:element ref="PayoutType" minOccurs="0"/>
+			<xsd:element ref="QualPlanType" minOccurs="0"/>
+			<xsd:element ref="NumWthdrwYTD" minOccurs="0"/>
+			<xsd:element ref="WithdrwMaxPct" minOccurs="0"/>
+			<xsd:element ref="TotalAmtWthdrwn" minOccurs="0"/>
+			<xsd:element ref="ManPayoutDate" minOccurs="0"/>
+			<xsd:element ref="MaxAvailableLoan" minOccurs="0"/>
+			<xsd:element ref="DeathBenefitPaymentOption" minOccurs="0"/>
+			<xsd:element ref="DeathBenefitAmt" minOccurs="0"/>
+			<xsd:element ref="CashValueMaturity" minOccurs="0"/>
+			<xsd:element ref="PenaltyPhaseEndDate" minOccurs="0"/>
+			<xsd:element ref="SurrenderValue" minOccurs="0"/>
+			<xsd:element ref="SurrenderCharge" minOccurs="0"/>
+			<xsd:element ref="FedTaxableGain" minOccurs="0"/>
+			<xsd:element ref="JurisdictionTaxableGain" minOccurs="0"/>
+			<xsd:element ref="GuarIntEndDate" minOccurs="0"/>
+			<xsd:element ref="GuarIntRate" minOccurs="0"/>
+			<xsd:element ref="GuarLifetimeRate" minOccurs="0"/>
+			<xsd:element ref="WithdrawalRule" minOccurs="0"/>
+			<xsd:element ref="EEContribAmt" minOccurs="0"/>
+			<xsd:element ref="EEContValueITD" minOccurs="0"/>
+			<xsd:element ref="ERContribAmt" minOccurs="0"/>
+			<xsd:element ref="ERValueITD" minOccurs="0"/>
+			<xsd:element ref="InitDepositAmt" minOccurs="0"/>
+			<xsd:element ref="InitDepositDate" minOccurs="0"/>
+			<xsd:element ref="InitPaymentAmt" minOccurs="0"/>
+			<xsd:element ref="LastPaidAmt" minOccurs="0"/>
+			<xsd:element ref="LastPaidDate" minOccurs="0"/>
+			<xsd:element ref="TotalDepositITD" minOccurs="0"/>
+			<xsd:element ref="GrossPremATD" minOccurs="0"/>
+			<xsd:element ref="GrossPremPriorYr" minOccurs="0"/>
+			<xsd:element ref="AccumValueIntRateCurrent" minOccurs="0"/>
+			<xsd:element ref="InitDepIntRateCurrent" minOccurs="0"/>
+			<xsd:element ref="RequestedMaturityDate" minOccurs="0"/>
+			<xsd:element ref="NetPremAmtATD" minOccurs="0"/>
+			<xsd:element ref="LoanIntDue" minOccurs="0"/>
+			<xsd:element ref="CarrierPricingIndicator" minOccurs="0"/>
+			<xsd:element ref="RMDBasisValue" minOccurs="0"/>
+			<xsd:element ref="Payout" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Rider" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="AnnuityUSA" minOccurs="0"/>
+			<xsd:element name="OLifEExtension" type="TCM_Annuity_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="AnnuitySysKey" type="SYSKEY"/>
+	<xsd:element name="PremType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="QualPlanType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="NumWthdrwYTD" type="xsd:integer"/>
+	<xsd:element name="InitPaymentAmt" type="xsd:decimal"/>
+	<xsd:element name="InitDepositAmt" type="xsd:decimal"/>
+	<xsd:element name="InitDepositDate" type="xsd:date"/>
+	<xsd:element name="InitDepIntRateCurrent" type="xsd:double"/>
+	<xsd:element name="PayoutType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="EEContribAmt" type="xsd:decimal"/>
+	<xsd:element name="EEContValueITD" type="xsd:decimal"/>
+	<xsd:element name="ERContribAmt" type="xsd:decimal"/>
+	<xsd:element name="ERValueITD" type="xsd:decimal"/>
+	<xsd:element name="GuarIntEndDate" type="xsd:date"/>
+	<xsd:element name="GuarIntRate" type="xsd:double"/>
+	<xsd:element name="GuarLifetimeRate" type="xsd:double"/>
+	<xsd:element name="AccumValueIntRateCurrent" type="xsd:double"/>
+	<xsd:element name="CarrierPricingIndicator" type="xsd:string"/>
+	<xsd:element name="DeathBenefitAmt" type="xsd:decimal"/>
+	<xsd:element name="DeathBenefitPaymentOption" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="GrossPremATD" type="xsd:decimal"/>
+	<xsd:element name="GrossPremPriorYr" type="xsd:decimal"/>
+	<xsd:element name="WithdrwMaxPct" type="xsd:double"/>
+	<xsd:element name="TotalAmtWthdrwn" type="xsd:decimal"/>
+	<xsd:element name="ManPayoutDate" type="xsd:date"/>
+	<xsd:element name="MaxAvailableLoan" type="xsd:decimal"/>
+	<xsd:element name="PenaltyPhaseEndDate" type="xsd:date"/>
+	<xsd:element name="SurrenderValue" type="xsd:decimal"/>
+	<xsd:element name="FedTaxableGain" type="xsd:decimal"/>
+	<xsd:element name="JurisdictionTaxableGain" type="xsd:decimal"/>
+	<xsd:element name="WithdrawalRule" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="LastPaidAmt" type="xsd:decimal"/>
+	<xsd:element name="LastPaidDate" type="xsd:date"/>
+	<xsd:element name="TotalDepositITD" type="xsd:decimal"/>
+	<xsd:element name="RequestedMaturityDate" type="xsd:date"/>
+	<xsd:element name="NetPremAmtATD" type="xsd:decimal"/>
+	<xsd:element name="LoanIntDue" type="xsd:decimal"/>
+	<xsd:element name="CashValueMaturity" type="xsd:decimal"/>
+	<xsd:element name="Payout" type="Payout_Type"/>
+	<xsd:complexType name="Payout_Type">
+		<xsd:sequence>
+			<xsd:element ref="PayoutAmt" minOccurs="0"/>
+			<xsd:element ref="PayoutPct" minOccurs="0"/>
+			<xsd:element ref="PayoutMode" minOccurs="0"/>
+			<xsd:element ref="AnnualIndex" minOccurs="0"/>
+			<xsd:element ref="SourceTransferAmtType" minOccurs="0"/>
+			<xsd:element ref="TaxWithholding" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="PayoutChange" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="BankPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="BankingInfoID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="PayoutPct" type="xsd:double"/>
+	<xsd:element name="PayoutMode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PayoutAmt" type="xsd:decimal"/>
+	<xsd:element name="AnnualIndex" type="xsd:double"/>
+	<xsd:element name="PayoutChange" type="PayoutChange_Type"/>
+	<xsd:complexType name="PayoutChange_Type">
+		<xsd:sequence>
+			<xsd:element ref="AmountQualifier" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="AmountQualifier" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TaxWithholding" type="TaxWithholding_Type"/>
+	<xsd:complexType name="TaxWithholding_Type">
+		<xsd:sequence>
+			<xsd:element ref="TaxWithholdingPlace" minOccurs="0"/>
+			<xsd:element ref="TaxNation" minOccurs="0"/>
+			<xsd:element ref="TaxDisbursementType" minOccurs="0"/>
+			<xsd:element ref="TaxWithholdingType" minOccurs="0"/>
+			<xsd:element ref="TaxWithheldPct" minOccurs="0"/>
+			<xsd:element ref="TaxWithheldAmt" minOccurs="0"/>
+			<xsd:element ref="TaxJurisdiction" minOccurs="0"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="AppliesToPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="TaxDisbursementType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TaxWithholdingType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TaxWithheldAmt" type="xsd:decimal"/>
+	<xsd:element name="TaxWithheldPct" type="xsd:double"/>
+	<xsd:element name="Rider" type="Rider_Type"/>
+	<xsd:complexType name="Rider_Type">
+		<xsd:sequence>
+			<xsd:element ref="RiderTypeCode"/>
+			<xsd:element ref="RiderSubTypeCode" minOccurs="0"/>
+			<xsd:element ref="Description" minOccurs="0"/>
+			<xsd:element ref="RiderCode"/>
+			<xsd:element ref="RiderStatus" minOccurs="0"/>
+			<xsd:element ref="EffDate" minOccurs="0"/>
+			<xsd:element ref="TermDate" minOccurs="0"/>
+			<xsd:element ref="TotAmt" minOccurs="0"/>
+			<xsd:element ref="InitialPremAmt" minOccurs="0"/>
+			<xsd:element ref="ProductCode" minOccurs="0"/>
+			<xsd:element ref="ShortName" minOccurs="0"/>
+			<xsd:element ref="MarketingName" minOccurs="0"/>
+			<xsd:element ref="CovOption" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Fee" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Rider_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="RiderCode" type="xsd:string"/>
+	<xsd:element name="RiderStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RiderTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="EffDate" type="xsd:date"/>
+	<xsd:element name="TermDate" type="xsd:date"/>
+	<xsd:element name="TotAmt" type="xsd:decimal"/>
+	<xsd:element name="InitialPremAmt" type="xsd:decimal"/>
+	<xsd:element name="Claim" type="Claim_Type"/>
+	<xsd:complexType name="Claim_Type">
+		<xsd:sequence>
+			<xsd:element ref="DeathCertificateCertifiedDate" minOccurs="0"/>
+			<xsd:element ref="CaseID" minOccurs="0"/>
+			<xsd:element ref="Participant" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="CaseIDREF" type="xsd:IDREF"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="ActualObjectID" type="xsd:IDREF"/>
+		<xsd:attribute name="ParticipantObjectID" type="xsd:IDREF"/>
+		<xsd:attribute name="ProviderPartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="DeathCertificateCertifiedDate" type="xsd:date"/>
+	<xsd:element name="CaseID" type="xsd:string"/>
+	<xsd:element name="Participant" type="Participant_Type"/>
+	<xsd:complexType name="Participant_Type">
+		<xsd:sequence>
+			<xsd:element ref="BeneficiaryIncomeOption" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="MailingAddressID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="BeneficiaryIncomeOption" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ResultCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ResultInfoCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ResultInfoDesc" type="xsd:string"/>
+	<xsd:element name="ResultInfoSeverity" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ResultInfoSource" type="xsd:string"/>
+	<xsd:element name="ResultInfoSysMessageCode" type="xsd:string"/>
+	<xsd:complexType name="PERSISTKEY">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Persist">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:NMTOKEN">
+							<xsd:enumeration value="Session"/>
+							<xsd:enumeration value="Permanent"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="SystemCode" type="xsd:string"/>
+				<xsd:attribute name="VendorCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SYSKEY">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Persist">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:NMTOKEN">
+							<xsd:enumeration value="Session"/>
+							<xsd:enumeration value="Permanent"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="SystemCode" type="xsd:string"/>
+				<xsd:attribute name="VendorCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="InquiryView_Type">
+		<xsd:sequence>
+			<xsd:element ref="InquiryViewKey" minOccurs="0"/>
+			<xsd:element ref="InquiryViewSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element ref="InquiryViewCode" minOccurs="0"/>
+				<xsd:sequence>
+					<xsd:element ref="ObjectTypeInfo" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="RelationRoleCodeCC" minOccurs="0"/>
+					<xsd:element ref="ParticipantRoleCodeCC" minOccurs="0"/>
+					<xsd:element ref="PersistTypeCode" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:complexType name="ParticipantRoleCodeCC_Type">
+		<xsd:sequence>
+			<xsd:element ref="ParticipantRoleCodeCCKey" minOccurs="0"/>
+			<xsd:element ref="ParticipantRoleCodeCCSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="ParticipantRoleCode" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:complexType name="RelationRoleCodeCC_Type">
+		<xsd:sequence>
+			<xsd:element ref="RelationRoleCodeCCKey" minOccurs="0"/>
+			<xsd:element ref="RelationRoleCodeCCSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="RelationRoleCode" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:complexType name="ObjectTypeInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="ObjectTypeInfoKey" minOccurs="0"/>
+			<xsd:element ref="ObjectTypeInfoSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="ParentObjectType" minOccurs="0"/>
+			<xsd:element ref="ActualObjectType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="TransRefGUID" type="xsd:string"/>
+	<xsd:element name="TransType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TransEffDate" type="xsd:date"/>
+	<xsd:element name="TransExeDate" type="xsd:date"/>
+	<xsd:element name="TransExeTime" type="xsd:time"/>
+	<xsd:element name="InquiryLevel" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="InquiryView" type="InquiryView_Type"/>
+	<xsd:element name="MaxRecords" type="xsd:integer"/>
+	<xsd:element name="StartDate" type="xsd:date"/>
+	<xsd:element name="EndDate" type="xsd:date"/>
+	<xsd:element name="PendingResponseOK" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="NoResponseOK" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TestIndicator" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TransactionContext" type="xsd:string"/>
+	<xsd:element name="CurrentLanguage" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="CarrierAdminSystem" type="xsd:string"/>
+	<xsd:element name="CarrierCode" type="xsd:string"/>
+	<xsd:element name="PolNumber" type="xsd:string"/>
+	<xsd:element name="TrackingID" type="xsd:string"/>
+	<xsd:element name="ParticipantRoleCodeCC" type="ParticipantRoleCodeCC_Type"/>
+	<xsd:element name="RelationRoleCodeCC" type="RelationRoleCodeCC_Type"/>
+	<xsd:element name="ParticipantRoleCodeCCKey" type="PERSISTKEY"/>
+	<xsd:element name="ParticipantRoleCodeCCSysKey" type="SYSKEY"/>
+	<xsd:element name="ParticipantRoleCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PersistTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="InquiryViewCode" type="xsd:string"/>
+	<xsd:element name="InquiryViewKey" type="PERSISTKEY"/>
+	<xsd:element name="InquiryViewSysKey" type="SYSKEY"/>
+	<xsd:element name="ObjectTypeInfo" type="ObjectTypeInfo_Type"/>
+	<xsd:element name="ObjectTypeInfoKey" type="PERSISTKEY"/>
+	<xsd:element name="ObjectTypeInfoSysKey" type="SYSKEY"/>
+	<xsd:element name="RelationRoleCodeCCKey" type="PERSISTKEY"/>
+	<xsd:element name="RelationRoleCodeCCSysKey" type="SYSKEY"/>
+	<xsd:element name="RelationRoleCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TransSubType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ParentObjectType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ActualObjectType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="KeyedValue" type="KeyedValue_Type"/>
+	<xsd:complexType name="KeyedValue_Type">
+		<xsd:sequence>
+			<xsd:element ref="KeyName"/>
+			<xsd:element ref="VendorCode" minOccurs="0"/>
+			<xsd:element ref="KeyValue" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="tc" type="ACORD_TYPE_CODE_TC"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="SystemCode" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:element name="KeyName" type="xsd:string"/>
+	<xsd:element name="KeyValue">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="VendorTC" type="ACORD_TYPE_CODE_TC" use="optional"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="VendorCode" type="xsd:string"/>
+	<xsd:element name="OLifEExtension">
+		<xsd:complexType mixed="true">
+			<xsd:sequence>
+				<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="VendorCode" type="xsd:string" use="required"/>
+			<xsd:attribute name="ExtensionCode" type="xsd:string"/>
+			<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+			<xsd:attribute name="SystemCode" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="DATAREP_TYPES">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="Full"/>
+			<xsd:enumeration value="Partial"/>
+			<xsd:enumeration value="ReadOnly"/>
+			<xsd:enumeration value="Removed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="TransResult" type="TransResult_Type"/>
+	<xsd:complexType name="TransResult_Type">
+		<xsd:sequence>
+			<xsd:element ref="ResultCode"/>
+			<xsd:element ref="ResultInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ResultInfo" type="ResultInfo_Type"/>
+	<xsd:complexType name="ResultInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="ResultInfoCode" minOccurs="0"/>
+			<xsd:element ref="ResultInfoDesc" minOccurs="0"/>
+			<xsd:element ref="ResultInfoSysMessageCode" minOccurs="0"/>
+			<xsd:element ref="ResultInfoSeverity" minOccurs="0"/>
+			<xsd:element ref="ResultInfoSource" minOccurs="0"/>
+			<xsd:element ref="OLifEExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="ProblemRef" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:element name="HoldingTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AccountDesignation" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="CurrencyTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="CostBasis" type="xsd:decimal"/>
+	<xsd:element name="AsOfDate" type="xsd:date"/>
+	<xsd:element name="LastFinActivityDate" type="xsd:date"/>
+	<xsd:element name="LastNonFinActivityDate" type="xsd:date"/>
+	<xsd:element name="LastAnniversaryDate" type="xsd:date"/>
+	<xsd:element name="NextAnniversaryDate" type="xsd:date"/>
+	<xsd:element name="HoldingForm" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AssignmentCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="QualifiedCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="DistributorClientAcctNum" type="xsd:string"/>
+	<xsd:element name="CommissionHoldInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RestrictionDetails" type="xsd:string"/>
+	<xsd:element name="RestrictionReason" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RestrictionInfo" type="RestrictionInfo_Type"/>
+	<xsd:complexType name="RestrictionInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="RestrictionCode" minOccurs="0"/>
+			<xsd:element ref="RestrictionReason" minOccurs="0"/>
+			<xsd:element ref="RestrictionDetails" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="PartyTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="PartyKey" type="PERSISTKEY"/>
+	<xsd:element name="PartySysKey" type="SYSKEY"/>
+	<xsd:element name="FullName" type="xsd:string"/>
+	<xsd:element name="GovtID" type="xsd:string"/>
+	<xsd:element name="ResidenceState" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Person" type="Person_Type"/>
+	<xsd:element name="Organization" type="Organization_Type"/>
+	<xsd:element name="Address" type="Address_Type"/>
+	<xsd:element name="Producer" type="Producer_Type"/>
+	<xsd:complexType name="Producer_Type">
+		<xsd:sequence>
+			<xsd:element ref="ProducerSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="NIPRNumber" minOccurs="0"/>
+			<xsd:element ref="License" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="CarrierAppointment" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="EOCoverageID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="NIPRNumber" type="xsd:string"/>
+	<xsd:element name="License" type="License_Type"/>
+	<xsd:complexType name="License_Type">
+		<xsd:sequence>
+			<xsd:element ref="GovtID" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="RegistrationRefID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="LicenseAddressID" type="xsd:IDREF"/>
+		<xsd:attribute name="AgencyAffiliationID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="CarrierAppointment" type="CarrierAppointment_Type"/>
+	<xsd:complexType name="CarrierAppointment_Type">
+		<xsd:sequence>
+			<xsd:element ref="CompanyProducerID" minOccurs="0"/>
+			<xsd:element ref="CarrierCode" minOccurs="0"/>
+			<xsd:element ref="ApptState" minOccurs="0"/>
+			<xsd:element ref="EffDate" minOccurs="0"/>
+			<xsd:element ref="ExpDate" minOccurs="0"/>
+			<xsd:element ref="CarrierApptStatus" minOccurs="0"/>
+			<xsd:element ref="DistributionAgreementInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="DistributionChannelInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_CarrierAppointment_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="LicenseID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+		<xsd:attribute name="AppointmentAddressID" type="xsd:IDREF"/>
+		<xsd:attribute name="AgencyAffiliationID" type="xsd:IDREF"/>
+		<xsd:attribute name="QualifyingOfficerID" type="xsd:IDREF"/>
+	</xsd:complexType>
+	<xsd:element name="CompanyProducerID" type="xsd:string"/>
+	<xsd:complexType name="Address_Type">
+		<xsd:sequence>
+			<xsd:element ref="AddressTypeCode" minOccurs="0"/>
+			<xsd:element ref="Line1" minOccurs="0"/>
+			<xsd:element ref="Line2" minOccurs="0"/>
+			<xsd:element ref="Line3" minOccurs="0"/>
+			<xsd:element ref="Line4" minOccurs="0"/>
+			<xsd:element ref="Line5" minOccurs="0"/>
+			<xsd:element ref="City" minOccurs="0"/>
+			<xsd:element ref="AddressState" minOccurs="0"/>
+			<xsd:element ref="AddressStateTC" minOccurs="0"/>
+			<xsd:element ref="Zip" minOccurs="0"/>
+			<xsd:element ref="AddressCountryTC" minOccurs="0"/>
+			<xsd:element ref="PostalDropCode" minOccurs="0"/>
+			<xsd:element ref="AddressValidInd" minOccurs="0"/>
+			<xsd:element name="OLifEExtension" type="TCM_Address_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="Line1" type="xsd:string"/>
+	<xsd:element name="Line2" type="xsd:string"/>
+	<xsd:element name="Line3" type="xsd:string"/>
+	<xsd:element name="Line4" type="xsd:string"/>
+	<xsd:element name="Line5" type="xsd:string"/>
+	<xsd:element name="City" type="xsd:string"/>
+	<xsd:element name="AddressState" type="xsd:string"/>
+	<xsd:element name="Zip" type="xsd:string"/>
+	<xsd:element name="PostalDropCode" type="xsd:string"/>
+	<xsd:element name="AddressValidInd" type="ACORD_TYPE_CODE"/>
+	<xsd:complexType name="Organization_Type">
+		<xsd:sequence>
+			<xsd:element ref="AbbrName" minOccurs="0"/>
+			<xsd:element ref="OrgCode" minOccurs="0"/>
+			<xsd:element ref="DTCCMemberCode" minOccurs="0"/>
+			<xsd:element ref="Branch" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="DTCCMemberCode" type="xsd:string"/>
+	<xsd:element name="OrgCode" type="xsd:string"/>
+	<xsd:element name="Branch" type="xsd:string"/>
+	<xsd:complexType name="Person_Type">
+		<xsd:sequence>
+			<xsd:element ref="FirstName" minOccurs="0"/>
+			<xsd:element ref="MiddleName" minOccurs="0"/>
+			<xsd:element ref="LastName" minOccurs="0"/>
+			<xsd:element ref="Prefix" minOccurs="0"/>
+			<xsd:element ref="Suffix" minOccurs="0"/>
+			<xsd:element ref="Title" minOccurs="0"/>
+			<xsd:element ref="Gender" minOccurs="0"/>
+			<xsd:element ref="BirthDate" minOccurs="0"/>
+			<xsd:element ref="Age" minOccurs="0"/>
+			<xsd:element ref="Citizenship" minOccurs="0"/>
+			<xsd:element ref="EstMortalityDate" minOccurs="0"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_Person_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="FirstName" type="xsd:string"/>
+	<xsd:element name="Prefix" type="xsd:string"/>
+	<xsd:element name="MiddleName" type="xsd:string"/>
+	<xsd:element name="LastName" type="xsd:string"/>
+	<xsd:element name="Suffix" type="xsd:string"/>
+	<xsd:element name="Title" type="xsd:string"/>
+	<xsd:element name="Gender" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="BirthDate" type="xsd:date"/>
+	<xsd:element name="Age" type="xsd:integer"/>
+	<xsd:element name="EstMortalityDate" type="xsd:date"/>
+	<xsd:element name="AcctNum" type="xsd:string"/>
+	<xsd:element name="AcctHolderName" type="xsd:string"/>
+	<xsd:element name="AnnuityUSA" type="AnnuityUSA_Type"/>
+	<xsd:complexType name="AnnuityUSA_Type">
+		<xsd:sequence>
+			<xsd:element ref="PreTEFRACostBasis" minOccurs="0"/>
+			<xsd:element ref="PostTEFRACostBasisAmt" minOccurs="0"/>
+			<xsd:element ref="TotalCostBasis" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="RiderSubTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="FeePct" type="xsd:double"/>
+	<xsd:element name="FeeType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="FeeMode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="CovOption" type="CovOption_Type"/>
+	<xsd:complexType name="CovOption_Type">
+		<xsd:sequence>
+			<xsd:element ref="DeathBenefitAmt" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="LifeParticipantRefID" type="xsd:IDREF"/>
+		<xsd:attribute name="CarrierLicenseID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="ArrSubType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ModalPct" type="xsd:double"/>
+	<xsd:element name="InvestProduct" type="InvestProduct_Type"/>
+	<xsd:complexType name="InvestProduct_Type">
+		<xsd:sequence>
+			<xsd:element ref="ProductCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+		<xsd:attribute name="PartyID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="SystemMessage" type="SystemMessage_Type"/>
+	<xsd:complexType name="SystemMessage_Type">
+		<xsd:sequence>
+			<xsd:element ref="SystemMessageKey" minOccurs="0"/>
+			<xsd:element ref="SystemMessageSysKey" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="MessageCode" minOccurs="0"/>
+			<xsd:element ref="CarrierAdminSystem" minOccurs="0"/>
+			<xsd:element ref="Sequence" minOccurs="0"/>
+			<xsd:element ref="RelatedObjectType" minOccurs="0"/>
+			<xsd:element ref="MessageDescription" minOccurs="0"/>
+			<xsd:element ref="MessageSeverityCode" minOccurs="0"/>
+			<xsd:element ref="MessageStartDate" minOccurs="0"/>
+			<xsd:element ref="MessageEndDate" minOccurs="0"/>
+			<xsd:element ref="KeyedValue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_SystemMessage_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="RelatedObjectID" type="xsd:IDREF"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="SystemMessageKey" type="PERSISTKEY"/>
+	<xsd:element name="SystemMessageSysKey" type="SYSKEY"/>
+	<xsd:element name="MessageCode" type="xsd:integer"/>
+	<xsd:element name="Sequence" type="xsd:integer"/>
+	<xsd:element name="MessageDescription" type="xsd:string"/>
+	<xsd:element name="MessageSeverityCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="MessageStartDate" type="xsd:date"/>
+	<xsd:element name="MessageEndDate" type="xsd:date"/>
+	<xsd:element name="InterestPercent" type="xsd:double"/>
+	<xsd:element name="BeneficiaryInd" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RoutingNumber" type="xsd:string"/>
+	<xsd:element name="SurrenderCharge" type="xsd:decimal"/>
+	<xsd:element name="IntPostingRate" type="xsd:double"/>
+	<xsd:element name="FinancialActivitySysKey" type="SYSKEY"/>
+	<xsd:element name="TaxWithholdingPlace" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ArrangementSysKey" type="SYSKEY"/>
+	<xsd:element name="AllocPercent" type="xsd:double"/>
+	<xsd:element name="FinEffDate" type="xsd:date"/>
+	<xsd:element name="DurQualifier" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Attachment" type="Attachment_Type"/>
+	<xsd:complexType name="Attachment_Type">
+		<xsd:sequence>
+			<xsd:element ref="AttachmentData" minOccurs="0"/>
+			<xsd:element ref="MimeTypeTC" minOccurs="0"/>
+			<xsd:element ref="TransferEncodingTypeTC" minOccurs="0"/>
+			<xsd:element ref="ImageType" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:ID"/>
+		<xsd:attribute name="DataRep" type="DATAREP_TYPES"/>
+	</xsd:complexType>
+	<xsd:element name="AttachmentData" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="MimeTypeTC" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TransferEncodingTypeTC" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ImageType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="MarketingName" type="xsd:string"/>
+	<xsd:element name="LoanSysKey" type="SYSKEY"/>
+	<xsd:element name="LoanKey" type="PERSISTKEY"/>
+	<xsd:element name="OriginatingObjectType" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AbbrName" type="xsd:string"/>
+	<xsd:element name="EstTotAssetsAmt" type="xsd:decimal"/>
+	<xsd:element name="LoanNumber" type="xsd:string"/>
+	<xsd:element name="AddressStateTC" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="GovtIDTC" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ProducerSysKey" type="SYSKEY"/>
+	<xsd:element name="ApptState" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ExpDate" type="xsd:date"/>
+	<xsd:element name="CarrierApptStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="DistributionAgreementInfo" type="DistributionAgreementInfo_Type"/>
+	<xsd:complexType name="DistributionAgreementInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="DistributionAgreementCode" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="DistributionAgreementCode" type="xsd:string"/>
+	<xsd:element name="DistributionChannelInfo" type="DistributionChannelInfo_Type"/>
+	<xsd:complexType name="DistributionChannelInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="DistributionChannelName" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="DistributionChannelName" type="xsd:string"/>
+	<xsd:element name="VolumeSharePct" type="xsd:double"/>
+	<xsd:element name="URL" type="URL_Type"/>
+	<xsd:complexType name="URL_Type">
+		<xsd:sequence>
+			<xsd:element ref="URLAddr" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="URLAddr" type="xsd:string"/>
+	<xsd:element name="RestrictionCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="TotalCostBasis" type="xsd:decimal"/>
+	<xsd:element name="StatementBasis" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ActivityTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ActivityStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AddressCountryTC" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="Citizenship" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AddressTypeCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="RequirementInfo" type="RequirementInfo_Type"/>
+	<xsd:complexType name="RequirementInfo_Type">
+		<xsd:sequence>
+			<xsd:element ref="RequirementDetails" minOccurs="0"/>
+			<xsd:element ref="ReqStatus" minOccurs="0"/>
+			<xsd:element ref="StatusEvent" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OLifEExtension" type="TCM_RequirementInfo_OLifEExtension" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="StatusEvent" type="StatusEvent_Type"/>
+	<xsd:complexType name="StatusEvent_Type">
+		<xsd:sequence>
+			<xsd:element ref="StatusEventCode" minOccurs="0"/>
+			<xsd:element ref="StatusEventDate" minOccurs="0"/>
+			<xsd:element ref="StatusEventDetail" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="StatusEventCode" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="StatusEventDate" type="xsd:date"/>
+	<xsd:element name="StatusEventDetail" type="xsd:string"/>
+	<xsd:element name="SubAccountSysKey" type="SYSKEY"/>
+	<xsd:element name="HOReceiptDate" type="xsd:date"/>
+	<xsd:element name="HOCompletionDate" type="xsd:date"/>
+	<xsd:element name="RMDBasisValue" type="xsd:double"/>
+	<xsd:element name="RequirementDetails" type="xsd:string"/>
+	<xsd:element name="ReqStatus" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="AuthorizationTransaction" type="AuthorizationTransaction_Type"/>
+	<xsd:complexType name="AuthorizationTransaction_Type">
+		<xsd:sequence>
+			<xsd:element ref="AdministrativeTransaction" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AdministrativeTransaction" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="ProductObjective" type="ACORD_TYPE_CODE"/>
+	<xsd:element name="BeneficiarySeqNum" type="xsd:int"/>
+	<xsd:element name="HoldingKey" type="PERSISTKEY"/>
+	<xsd:element name="HoldingSysKey" type="SYSKEY"/>
+	
+</xsd:schema>

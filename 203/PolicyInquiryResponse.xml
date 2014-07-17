@@ -1,0 +1,415 @@
+ <p:PolicyInquiryResponse xmlns:p="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1">
+         <TXLife>
+            <ns0:TXLifeResponse PrimaryObjectID="Holding_1907" xmlns:ns0="http://ACORD.org/Standards/Life/2">
+               <ns0:TransRefGUID>GMG-203-12-6-1234</ns0:TransRefGUID>
+               <ns0:TransType tc="203">Holding Inquiry</ns0:TransType>
+               <ns0:TransExeDate>2014-03-25</ns0:TransExeDate>
+               <ns0:TransExeTime>09:18:55.039-05:00</ns0:TransExeTime>
+               <ns0:InquiryLevel tc="3" xmlns:ns="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1"/>
+               <ns0:PendingResponseOK tc="0">False</ns0:PendingResponseOK>
+               <ns0:TestIndicator tc="0">False</ns0:TestIndicator>
+               <ns0:TransResult>
+                  <ns0:ResultCode tc="1">Success</ns0:ResultCode>
+               </ns0:TransResult>
+               <ns0:OLifE>
+                  <ns0:CurrentLanguage tc="9">English</ns0:CurrentLanguage>
+                  <ns0:Holding id="Holding_1907">
+                     <ns0:AccountDesignation tc="4">Self Directed</ns0:AccountDesignation>
+                     <ns0:HoldingTypeCode tc="2">Policy</ns0:HoldingTypeCode>
+                     <ns0:CurrencyTypeCode tc="840">USD (United States Dollar)</ns0:CurrencyTypeCode>
+                     <ns0:AsOfDate>2014-03-14</ns0:AsOfDate>
+                     <ns0:NextAnniversaryDate>2014-06-03</ns0:NextAnniversaryDate>
+                     <ns0:QualifiedCode tc="2">It must be  qualified</ns0:QualifiedCode>
+                     <ns0:Policy CarrierPartyID="Party_1920" id="Policy_1908">
+                        <ns0:CarrierAdminSystem>VTGP65B</ns0:CarrierAdminSystem>
+                        <ns0:PolNumber>xxxxxxxxxxx</ns0:PolNumber>
+                        <ns0:LineOfBusiness tc="2">Annuity</ns0:LineOfBusiness>
+                        <ns0:ProductType tc="10">Variable Annuity</ns0:ProductType>
+                        <ns0:ProductCode>89353N402</ns0:ProductCode>
+                        <ns0:CarrierCode>86231</ns0:CarrierCode>
+                        <ns0:PlanName>Transamerica Liberty Variable Annuity</ns0:PlanName>
+                        <ns0:MarketingName>Transamerica Liberty</ns0:MarketingName>
+                        <ns0:PolicyStatus tc="1">Active (inforce).</ns0:PolicyStatus>
+                        <ns0:IssueNation tc="1">United States of America</ns0:IssueNation>
+                        <ns0:Jurisdiction tc="58">Wisconsin</ns0:Jurisdiction>
+                        <ns0:CusipNum>89353N402</ns0:CusipNum>
+                        <ns0:PolicyValue>194922.17</ns0:PolicyValue>
+                        <ns0:EffDate>2008-06-03</ns0:EffDate>
+                        <ns0:IssueDate>2008-06-03</ns0:IssueDate>
+                        <ns0:PaymentDueDate>2008-06-03</ns0:PaymentDueDate>
+                        <ns0:BeneficiaryInd tc="1">True</ns0:BeneficiaryInd>
+                        <ns0:FreeAvailableAmt>12932.17</ns0:FreeAvailableAmt>
+                        <ns0:FinReportingCarrierCode>PFL</ns0:FinReportingCarrierCode>
+                        <ns0:Annuity>
+                           <ns0:AnnuitySysKey SystemCode="ProdNo">482</ns0:AnnuitySysKey>
+                           <ns0:PremType tc="2">Flexible</ns0:PremType>
+                           <ns0:PayoutType tc="2">Deferred</ns0:PayoutType>
+                           <ns0:QualPlanType tc="5">IRA - Traditional</ns0:QualPlanType>
+                           <ns0:TotalAmtWthdrwn>68180.15</ns0:TotalAmtWthdrwn>
+                           <ns0:SurrenderValue>193245.67</ns0:SurrenderValue>
+                           <ns0:FedTaxableGain>194922.17</ns0:FedTaxableGain>
+                           <ns0:InitDepositAmt>10709.09</ns0:InitDepositAmt>
+                           <ns0:TotalDepositITD>229921.93</ns0:TotalDepositITD>
+                           <ns0:RequestedMaturityDate>2017-12-31</ns0:RequestedMaturityDate>
+                           <ns0:CarrierPricingIndicator>165BJ</ns0:CarrierPricingIndicator>
+                           <ns0:RMDBasisValue>19172.71</ns0:RMDBasisValue>
+                           <ns0:Payout>
+                              <ns0:TaxWithholding>
+                                 <ns0:TaxWithholdingPlace tc="1">Federal or national tax</ns0:TaxWithholdingPlace>
+                                 <ns0:TaxWithheldAmt>19492.22</ns0:TaxWithheldAmt>
+                              </ns0:TaxWithholding>
+                           </ns0:Payout>
+                           <ns0:Rider>
+                              <ns0:RiderTypeCode tc="215">Guaranteed Min Withdrawal for Life Benefit (GWLB)</ns0:RiderTypeCode>
+                              <ns0:RiderSubTypeCode tc="11">Standard Guaranteed Withdrawal for Life Benefit</ns0:RiderSubTypeCode>
+                              <ns0:RiderCode>RSBDV</ns0:RiderCode>
+                              <ns0:RiderStatus tc="1">Active (inforce).</ns0:RiderStatus>
+                              <ns0:EffDate>2008-06-03</ns0:EffDate>
+                              <ns0:InitialPremAmt>10709.09</ns0:InitialPremAmt>
+                              <ns0:ShortName>Guaranteed Min Withdrawal for Life benefit</ns0:ShortName>
+                              <ns0:MarketingName>Retirement Income Choice</ns0:MarketingName>
+                              <ns0:OLifEExtension>
+                                 <ns0:IncomeEnhRiderNotification>N</ns0:IncomeEnhRiderNotification>
+                                 <ns0:WBMultiplierBenefitIndicator tc="0">False</ns0:WBMultiplierBenefitIndicator>
+                                 <ns0:ForLifeMinimumRemainingWithdrawalLiteral>Rider Death Benefit</ns0:ForLifeMinimumRemainingWithdrawalLiteral>
+                                 <ns0:MaximumAnnualWithdrawalLiteral>Rider Withdrawal Amount</ns0:MaximumAnnualWithdrawalLiteral>
+                                 <ns0:TotalWithdrawalBaseLiteral>Withdrawal Base</ns0:TotalWithdrawalBaseLiteral>
+                                 <ns0:IncomeEnhRiderOption tc="0">False</ns0:IncomeEnhRiderOption>
+                                 <ns0:JointBenefitInd tc="0">False</ns0:JointBenefitInd>
+                                 <ns0:HighestMVAVAmount>228319.62</ns0:HighestMVAVAmount>
+                                 <ns0:HighestMVAVLiteral>Highest Monthiversary Value</ns0:HighestMVAVLiteral>
+                                 <ns0:HighestMVAVDate>2011-05-03</ns0:HighestMVAVDate>
+                              </ns0:OLifEExtension>
+                           </ns0:Rider>
+                           <ns0:OLifEExtension>
+                              <ns0:VantagePolicyStatus>A</ns0:VantagePolicyStatus>
+                              <ns0:VantageProcessingComp>AEG</ns0:VantageProcessingComp>
+                              <ns0:ConvBF>N</ns0:ConvBF>
+                              <ns0:ConvReason>01</ns0:ConvReason>
+                              <ns0:IsTamra403B>N</ns0:IsTamra403B>
+                              <ns0:FormType>N</ns0:FormType>
+                              <ns0:PrinNonTaxableAmount>181990.00</ns0:PrinNonTaxableAmount>
+                              <ns0:IssueAge>85</ns0:IssueAge>
+                              <ns0:LoanFlag>N</ns0:LoanFlag>
+                              <ns0:FreeTransferFlag>Y</ns0:FreeTransferFlag>
+                              <ns0:MarketingGroupCode>FMEG</ns0:MarketingGroupCode>
+                              <ns0:TaxableAmount>194922.17</ns0:TaxableAmount>
+                              <ns0:RMDAmt>19172.71</ns0:RMDAmt>
+                              <ns0:LifeMinWDAmount>161741.78</ns0:LifeMinWDAmount>
+                              <ns0:MaxAnnualWDAmount>725.67</ns0:MaxAnnualWDAmount>
+                              <ns0:TotWDBaseAmount>253488.92</ns0:TotWDBaseAmount>
+                              <ns0:LifeFreePercent>7.000</ns0:LifeFreePercent>
+                              <ns0:RMDRemainingAMT>19172.71</ns0:RMDRemainingAMT>
+                              <ns0:DeathBenefitName>Return of Premium</ns0:DeathBenefitName>
+                           </ns0:OLifEExtension>
+                        </ns0:Annuity>
+                        <ns0:ApplicationInfo>
+                           <ns0:HOReceiptDate>2008-05-22</ns0:HOReceiptDate>
+                        </ns0:ApplicationInfo>
+                     </ns0:Policy>
+                     <ns0:Investment id="Investment_1921">
+                        <ns0:SubAccount id="SubAccount_1922">
+                           <ns0:AssetClass tc="2">Equity (separate Account)</ns0:AssetClass>
+                           <ns0:ProductCode>803</ns0:ProductCode>
+                           <ns0:CarrierCode>86231</ns0:CarrierCode>
+                           <ns0:ProductFullName>TA Asset Allocation - Moderate Growth</ns0:ProductFullName>
+                           <ns0:ProductObjective tc="7">Asset Allocation</ns0:ProductObjective>
+                           <ns0:CurrNumberUnits>126970.9829</ns0:CurrNumberUnits>
+                           <ns0:UnitValue>1.535171</ns0:UnitValue>
+                           <ns0:TotValue>194922.17</ns0:TotValue>
+                           <ns0:AllocPercent>100.0</ns0:AllocPercent>
+                           <ns0:TransferSendAllowedInd tc="1">True</ns0:TransferSendAllowedInd>
+                           <ns0:TransferDestAllowedInd tc="1">True</ns0:TransferDestAllowedInd>
+                           <ns0:OLifEExtension>
+                              <ns0:AudioID>1910</ns0:AudioID>
+                           </ns0:OLifEExtension>
+                        </ns0:SubAccount>
+                     </ns0:Investment>
+                     <ns0:Arrangement>
+                        <ns0:ArrangementSysKey SystemCode="PayoutNo">1</ns0:ArrangementSysKey>
+                        <ns0:ProductCode>SWP</ns0:ProductCode>
+                        <ns0:ArrMode tc="1">Annual or Annually</ns0:ArrMode>
+                        <ns0:ArrType tc="38">Systematic Withdrawal</ns0:ArrType>
+                        <ns0:ArrSubType tc="4">Specified Amount Withdrawal</ns0:ArrSubType>
+                        <ns0:ArrStatus tc="1">Active the Holding is in force</ns0:ArrStatus>
+                        <ns0:NextActivityDate>2014-12-01</ns0:NextActivityDate>
+                        <ns0:StartDate>2012-12-01</ns0:StartDate>
+                        <ns0:EndDate>2100-12-01</ns0:EndDate>
+                        <ns0:ModalAmt>17018.55</ns0:ModalAmt>
+                        <ns0:SourceTransferAmtType tc="0">Unknown</ns0:SourceTransferAmtType>
+                        <ns0:TaxWithholding>
+                           <ns0:TaxWithholdingPlace tc="1">Federal or national tax</ns0:TaxWithholdingPlace>
+                           <ns0:TaxWithheldPct>10.0</ns0:TaxWithheldPct>
+                        </ns0:TaxWithholding>
+                        <ns0:TaxWithholding>
+                           <ns0:TaxWithholdingPlace tc="2">Jurisdiction Tax - in the United States, state tax</ns0:TaxWithholdingPlace>
+                           <ns0:TaxWithheldAmt>5.000</ns0:TaxWithheldAmt>
+                        </ns0:TaxWithholding>
+                        <ns0:OLifEExtension>
+                           <ns0:NetDistAmount>173753.45</ns0:NetDistAmount>
+                           <ns0:PayoutOption>Final MRD Rules Modal</ns0:PayoutOption>
+                        </ns0:OLifEExtension>
+                     </ns0:Arrangement>
+                     <ns0:Authorization>
+                        <ns0:AuthorizationEntityCC>
+                           <ns0:AuthorizationEntity tc="8">Owner</ns0:AuthorizationEntity>
+                           <ns0:AuthorizationEntity tc="184">Joint Owner</ns0:AuthorizationEntity>
+                           <ns0:AuthorizationEntity tc="37">Primary Writing Agent</ns0:AuthorizationEntity>
+                           <ns0:AuthorizationEntity tc="38">Primary Servicing Agent</ns0:AuthorizationEntity>
+                           <ns0:AuthorizationEntity tc="52">Additional Writing Agent</ns0:AuthorizationEntity>
+                        </ns0:AuthorizationEntityCC>
+                     </ns0:Authorization>
+                     <ns0:RestrictionInfo>
+                        <ns0:RestrictionCode tc="1">No restrictions</ns0:RestrictionCode>
+                     </ns0:RestrictionInfo>
+                  </ns0:Holding>
+                  <ns0:Party id="Party_1909">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>LAST, FIRST M</ns0:FullName>
+                     <ns0:GovtID>999999999</ns0:GovtID>
+                     <ns0:GovtIDTC tc="1">Social Security Number US</ns0:GovtIDTC>
+                     <ns0:ResidenceState tc="58">Wisconsin</ns0:ResidenceState>
+                     <ns0:Person>
+                        <ns0:FirstName>FIRST M</ns0:FirstName>
+                        <ns0:LastName>LAST</ns0:LastName>
+                        <ns0:Gender tc="1">Male</ns0:Gender>
+                        <ns0:BirthDate>1922-11-04</ns0:BirthDate>
+                        <ns0:Age>91</ns0:Age>
+                     </ns0:Person>
+                     <ns0:Address>
+                        <ns0:AddressTypeCode tc="17">Mailing</ns0:AddressTypeCode>
+                        <ns0:Line1>123 MAIN ST</ns0:Line1>
+                        <ns0:City>EAU CLAIRE</ns0:City>
+                        <ns0:AddressStateTC tc="58">Wisconsin</ns0:AddressStateTC>
+                        <ns0:Zip>54701</ns0:Zip>
+                        <ns0:AddressCountryTC tc="1">United States of America</ns0:AddressCountryTC>
+                        <ns0:AddressValidInd tc="1">True</ns0:AddressValidInd>
+                     </ns0:Address>
+                     <ns0:PartialIdentification>
+                        <ns0:IdentificationPart>2082</ns0:IdentificationPart>
+                        <ns0:PartialIDType tc="1">Last four digits of US SSN</ns0:PartialIDType>
+                     </ns0:PartialIdentification>
+                     <ns0:OLifEExtension>
+                        <ns0:Pin>1111</ns0:Pin>
+                        <ns0:IsInitialPin tc="1">True</ns0:IsInitialPin>
+                        <ns0:DirectoryID>397122082</ns0:DirectoryID>
+                        <ns0:MailResSameInd tc="0">False</ns0:MailResSameInd>
+                     </ns0:OLifEExtension>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1912">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>JOHN DOE 34%</ns0:FullName>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1914">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>JANE DOE  33%</ns0:FullName>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1916">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>JIM DOE  33%</ns0:FullName>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1918">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>NONE LISTED</ns0:FullName>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1920">
+                     <ns0:PartyTypeCode tc="2">Organization</ns0:PartyTypeCode>
+                     <ns0:PartySysKey SystemCode="ClientNumber">EG39</ns0:PartySysKey>
+                     <ns0:FullName>Transamerica Life Insurance Company</ns0:FullName>
+                     <ns0:Organization>
+                        <ns0:AbbrName>TLIC/PFL</ns0:AbbrName>
+                        <ns0:DTCCMemberCode>4566</ns0:DTCCMemberCode>
+                     </ns0:Organization>
+                     <ns0:Phone>
+                        <ns0:DialNumber>800-525-6205</ns0:DialNumber>
+                     </ns0:Phone>
+                     <ns0:URL>
+                        <ns0:URLAddr>www.transamericaservice.com</ns0:URLAddr>
+                     </ns0:URL>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1925">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>LAST, FIRST M A</ns0:FullName>
+                     <ns0:GovtID>999999999</ns0:GovtID>
+                     <ns0:GovtIDTC tc="1">Social Security Number US</ns0:GovtIDTC>
+                     <ns0:Person>
+                        <ns0:FirstName>FIRST M</ns0:FirstName>
+                        <ns0:LastName>LAST</ns0:LastName>
+                     </ns0:Person>
+                     <ns0:Address>
+                        <ns0:Line1>LPL FINANCIAL CORPORATION</ns0:Line1>
+                        <ns0:Line2>601 S FARWELL ST</ns0:Line2>
+                        <ns0:City>EAU CLAIRE</ns0:City>
+                        <ns0:AddressStateTC tc="58">Wisconsin</ns0:AddressStateTC>
+                        <ns0:Zip>54701</ns0:Zip>
+                     </ns0:Address>
+                     <ns0:Phone>
+                        <ns0:DialNumber>715-834-9111</ns0:DialNumber>
+                     </ns0:Phone>
+                     <ns0:Producer>
+                        <ns0:ProducerSysKey SystemCode="AgentID">387666608</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="AgentProfile">A02</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="CompanyCode">PFF</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="TrailCode">VB02</ns0:ProducerSysKey>
+                        <ns0:CarrierAppointment>
+                           <ns0:CompanyProducerID>387666608</ns0:CompanyProducerID>
+                           <ns0:CarrierCode>86231</ns0:CarrierCode>
+                           <ns0:CarrierApptStatus tc="1">Active</ns0:CarrierApptStatus>
+                           <ns0:DistributionAgreementInfo>
+                              <ns0:DistributionAgreementCode>A02</ns0:DistributionAgreementCode>
+                           </ns0:DistributionAgreementInfo>
+                           <ns0:DistributionChannelInfo>
+                              <ns0:DistributionChannelName>FMEG</ns0:DistributionChannelName>
+                           </ns0:DistributionChannelInfo>
+                        </ns0:CarrierAppointment>
+                     </ns0:Producer>
+                     <ns0:OLifEExtension>
+                        <ns0:LoyaltyLevel tc="1003700915">Standard</ns0:LoyaltyLevel>
+                        <ns0:LoyaltyReferral>false</ns0:LoyaltyReferral>
+                        <ns0:LoyaltyAUM>1356398.8999999999068677425384521484375</ns0:LoyaltyAUM>
+                        <ns0:LoyaltyProgramIndicatorAUM>false</ns0:LoyaltyProgramIndicatorAUM>
+                        <ns0:LoyaltyProgramIndicatorVA>false</ns0:LoyaltyProgramIndicatorVA>
+                        <ns0:LoyaltyProgramIndicatorMF>false</ns0:LoyaltyProgramIndicatorMF>
+                     </ns0:OLifEExtension>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1927">
+                     <ns0:PartyTypeCode tc="1">Person</ns0:PartyTypeCode>
+                     <ns0:FullName>FLATEN, STEVEN A</ns0:FullName>
+                     <ns0:GovtID>123456789</ns0:GovtID>
+                     <ns0:GovtIDTC tc="1">Social Security Number US</ns0:GovtIDTC>
+                     <ns0:Person>
+                        <ns0:FirstName>STEVEN A</ns0:FirstName>
+                        <ns0:LastName>FLATEN</ns0:LastName>
+                     </ns0:Person>
+                     <ns0:Producer>
+                        <ns0:ProducerSysKey SystemCode="AgentID">387666608</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="AgentProfile">A02</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="CompanyCode">PFF</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="TrailCode">VB02</ns0:ProducerSysKey>
+                        <ns0:CarrierAppointment>
+                           <ns0:CompanyProducerID>123456789</ns0:CompanyProducerID>
+                           <ns0:CarrierCode>86231</ns0:CarrierCode>
+                           <ns0:CarrierApptStatus tc="1">Active</ns0:CarrierApptStatus>
+                           <ns0:DistributionAgreementInfo>
+                              <ns0:DistributionAgreementCode>A02</ns0:DistributionAgreementCode>
+                           </ns0:DistributionAgreementInfo>
+                        </ns0:CarrierAppointment>
+                     </ns0:Producer>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1929">
+                     <ns0:PartyTypeCode tc="2">Organization</ns0:PartyTypeCode>
+                     <ns0:FullName>LPL FINANCIAL CORPORATION</ns0:FullName>
+                     <ns0:GovtID>952834236</ns0:GovtID>
+                     <ns0:GovtIDTC tc="2">Taxpayer Identification Number</ns0:GovtIDTC>
+                     <ns0:Organization>
+                        <ns0:AbbrName>LPL FINANCIAL CORPORATION</ns0:AbbrName>
+                        <ns0:OrgCode>EG39</ns0:OrgCode>
+                        <ns0:Branch>EG39</ns0:Branch>
+                     </ns0:Organization>
+                     <ns0:Address>
+                        <ns0:Line1>4707 EXECUTIVE DR</ns0:Line1>
+                        <ns0:City>SAN DIEGO</ns0:City>
+                        <ns0:AddressStateTC tc="6">California</ns0:AddressStateTC>
+                        <ns0:Zip>921213091</ns0:Zip>
+                     </ns0:Address>
+                     <ns0:Phone>
+                        <ns0:DialNumber>800-877-7210</ns0:DialNumber>
+                     </ns0:Phone>
+                     <ns0:Producer>
+                        <ns0:ProducerSysKey SystemCode="AgentID">952834236</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="AgentProfile">101</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="CompanyCode">PFF</ns0:ProducerSysKey>
+                        <ns0:ProducerSysKey SystemCode="TrailCode">VB02</ns0:ProducerSysKey>
+                        <ns0:CarrierAppointment>
+                           <ns0:CompanyProducerID>952834236</ns0:CompanyProducerID>
+                           <ns0:CarrierCode>86231</ns0:CarrierCode>
+                           <ns0:CarrierApptStatus tc="1">Active</ns0:CarrierApptStatus>
+                           <ns0:DistributionAgreementInfo>
+                              <ns0:DistributionAgreementCode>101</ns0:DistributionAgreementCode>
+                           </ns0:DistributionAgreementInfo>
+                        </ns0:CarrierAppointment>
+                     </ns0:Producer>
+                  </ns0:Party>
+                  <ns0:Party id="Party_1931">
+                     <ns0:PartyTypeCode tc="2">Organization</ns0:PartyTypeCode>
+                     <ns0:FullName>LPL FINANCIAL CORPORATION</ns0:FullName>
+                     <ns0:Organization>
+                        <ns0:AbbrName>LPL FINANCIAL CORPORATION</ns0:AbbrName>
+                     </ns0:Organization>
+                     <ns0:Producer>
+                        <ns0:ProducerSysKey SystemCode="AgentID">EG39</ns0:ProducerSysKey>
+                        <ns0:CarrierAppointment>
+                           <ns0:CompanyProducerID>EG39</ns0:CompanyProducerID>
+                           <ns0:CarrierCode>86231</ns0:CarrierCode>
+                        </ns0:CarrierAppointment>
+                     </ns0:Producer>
+                  </ns0:Party>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1909" id="Relation_1910">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="8">Owner</ns0:RelationRoleCode>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1909" id="Relation_1911">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="35">Annuitant</ns0:RelationRoleCode>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1912" id="Relation_1913">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="34">Beneficiary</ns0:RelationRoleCode>
+                     <ns0:BeneficiarySeqNum>1</ns0:BeneficiarySeqNum>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1914" id="Relation_1915">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="34">Beneficiary</ns0:RelationRoleCode>
+                     <ns0:BeneficiarySeqNum>2</ns0:BeneficiarySeqNum>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1916" id="Relation_1917">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="34">Beneficiary</ns0:RelationRoleCode>
+                     <ns0:BeneficiarySeqNum>3</ns0:BeneficiarySeqNum>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1918" id="Relation_1919">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="36">Contingent Beneficiary</ns0:RelationRoleCode>
+                     <ns0:BeneficiarySeqNum>4</ns0:BeneficiarySeqNum>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1925" id="Relation_1926">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="37">Primary Writing Agent</ns0:RelationRoleCode>
+                     <ns0:VolumeSharePct>100.0</ns0:VolumeSharePct>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1927" id="Relation_1928">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="38">Primary Servicing Agent</ns0:RelationRoleCode>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1929" id="Relation_1930">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="48">General Agent</ns0:RelationRoleCode>
+                  </ns0:Relation>
+                  <ns0:Relation OriginatingObjectID="Policy_1908" RelatedObjectID="Party_1931" id="Relation_1932">
+                     <ns0:OriginatingObjectType tc="18">Policy</ns0:OriginatingObjectType>
+                     <ns0:RelatedObjectType tc="6">Party</ns0:RelatedObjectType>
+                     <ns0:RelationRoleCode tc="154">Servicing Agency</ns0:RelationRoleCode>
+                  </ns0:Relation>
+                  <ns0:Activity HoldingID="Holding_1907" id="Activity_1924">
+                     <ns0:ActivityTypeCode tc="13">Policy Owner Statement</ns0:ActivityTypeCode>
+                     <ns0:ActivityStatus tc="2">Pending</ns0:ActivityStatus>
+                     <ns0:StartDate>2014-04-01</ns0:StartDate>
+                  </ns0:Activity>
+                  <ns0:FinancialStatement id="FinancialStatement_1923">
+                     <ns0:StatementType tc="3">Policy Annual Statement</ns0:StatementType>
+                     <ns0:StatementBasis tc="5">Calendar Quarterly Effective Date</ns0:StatementBasis>
+                     <ns0:StatementDate>2014-01-01</ns0:StatementDate>
+                  </ns0:FinancialStatement>
+               </ns0:OLifE>
+            </ns0:TXLifeResponse>
+         </TXLife>
+      </p:PolicyInquiryResponse>

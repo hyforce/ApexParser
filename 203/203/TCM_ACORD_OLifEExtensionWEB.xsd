@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by AEGONUSA (AEGONUSA) -->
+<!-- added xsd:any element at the end of each OLifEExtension - Satguru Srivastava 2011-11-09 -->
+<!-- removed xsd:any element at the end of each OLifEExtension - Arun Ambikapathi 2012-02-07 -->
+<?xml-stylesheet type="text/xsl" href="xsd2html.xsl"?>
+<xsd:schema xmlns="http://ACORD.org/Standards/Life/2"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://ACORD.org/Standards/Life/2"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.00.00">
+	<xsd:complexType name="TCM_Party_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element ref="Pin" minOccurs="0" />
+
+			<xsd:element ref="IsInitialPin" minOccurs="0" />
+			<xsd:element ref="IsTier1Agent" minOccurs="0" />
+			<xsd:element ref="IsPlatinumAgent" minOccurs="0" />
+			<xsd:element ref="PlatinumPin" minOccurs="0" />
+			<xsd:element ref="PlatinumVDN" minOccurs="0" />
+			<xsd:element ref="DirectoryID" minOccurs="0" />
+			<xsd:element ref="FirstSaleDate" minOccurs="0" />
+			<xsd:element ref="IsPolicyOwner" minOccurs="0" />
+			<xsd:element ref="MailResSameInd" minOccurs="0" />
+			<xsd:element ref="LoyaltyLevel" minOccurs="0" />
+			<xsd:element minOccurs="0" name="LoyaltyReferral"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyPartnerId"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyEffectiveDate"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyGoodThruDate"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyReferralDate"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyReferralEndDate"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LevelEffectiveDate"
+				type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyAUM"
+				type="xsd:decimal">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyProgramIndicatorAUM"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyProgramIndicatorVA"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyProgramIndicatorMF"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyRenewLevel"
+				type="xsd:decimal">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="LoyaltyAchieveNextLevel"
+				type="xsd:decimal">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="Name" type="xsd:string"></xsd:element>
+			<xsd:element minOccurs="0" name="AWDqueue"
+				type="xsd:string">
+			</xsd:element>
+			<xsd:element minOccurs="0" name="SalesYrToDate"
+				type="xsd:decimal">
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Address_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element ref="CountryCode" minOccurs="0" />
+			<xsd:element ref="AnntyAddressChgAllowed" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Person_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element ref="PrimaryCitizenship" minOccurs="0" />
+			<xsd:element ref="DualCitizenship" minOccurs="0" />
+			<xsd:element ref="NonResidentAlienInd" minOccurs="0" />
+			<xsd:element name="AnntyAddressChgAlowed" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CountryCode_Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="CountryCodeAbbr" type="xsd:string"
+					use="optional" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Arrangement_OLifEExtension">
+		<xsd:sequence>
+			<!-- AmountQualifier: TC of 1 is Gross, 2 is Net, 3 is End Result -->
+			<xsd:element name="AmountQualifier" type="TCM_ACORD_TC"
+				minOccurs="0" />
+			<xsd:element name="NetDistAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="MVAIndicator" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="MVAAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="DisbursementInd" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="DistributionCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="TaxOverrideInd" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="PayoutOption" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="FeeOverrideIndicator" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Loan_OLifEExtension">
+		<xsd:sequence />
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Annuity_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="VantagePolicyStatus" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="VantageProcessingComp" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="VantagePlanCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="MarketingID" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="MarketingIDDesc" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="AIFSubAccountA" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="AIFSubAccountB" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="ContractForm" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="SuspendCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="TierPolicyValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="BailoutRate" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="VantageRestrictionCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="CapBailoutRate" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="MAV" type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="ConvBF" type="xsd:string" minOccurs="0" />
+			<xsd:element name="ConvReason" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="ConvName" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="SpecialHandling" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="IsTamra403B" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="FormType" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="PrinNonTaxableAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="NonForfeitureValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="IssueAge" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="LoanFlag" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="FreeTransferFlag" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="TransactionPendingFlag" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="DeathBenefitInd" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="EstateEnhancerInd" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="AnnuityOption" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="IssueReason" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="NetCheckAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="LastTransferDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="GMIBInd" type="xsd:string" minOccurs="0" />
+			<xsd:element name="PremiumTax" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="SweepDate" type="xsd:date" minOccurs="0" />
+			<xsd:element name="ConversionDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="MarketingGroupCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="PTaxCollectableAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="TotalLoansAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="EarnedLoanInterestAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="UnEarnedLoanInterestAmt"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="PreTEFRA_InAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PreTEFRA_OutAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PostTEFRA_InAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PostTEFRA_OutAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="ProductID" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="ExcessWithdrawalAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="GIALockInd" type="xsd:string"
+				minOccurs="0" />
+			<!--  <xsd:element name="MinSurrenderBenefit" type="xsd:decimal" minOccurs="0"/> -->
+			<xsd:element name="TaxableAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="RMDAmt" type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="CapRate" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="AnnuitizationValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="GuaranteedFutureValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="GuaranteedMinIncomeBenefit"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="InitialPremAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<!--  <xsd:element name="PenaltyFreeWDAmount" type="xsd:decimal" minOccurs="0"/> -->
+			<xsd:element name="LifeMinWDAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="MaxAnnualWDAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="TotWDBaseAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PrincipalBackMinRemWDamt"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="LifeFreePercent" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PBMRWAFreePrecent" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="ContractValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="HighestLoanBal" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="LoanPayoffValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PremiumBonusAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="RMDRemainingAMT" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="DeathBenefitName" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_SubAccount_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="AudioID" type="xsd:string" minOccurs="0" />
+			<xsd:element name="CapRateDisclosure" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="CapRate" type="xsd:decimal"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_SystemMessage_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="AudioID" type="xsd:string" minOccurs="0" />
+			<xsd:element name="SpecialProduct" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="SpecialStatCompany" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_AccountingActivity_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="SourceCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="MemoCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="PremiumBonusAmt" type="xsd:decimal"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_ACORD_TC">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="tc" type="TCM_ACORD_TYPE_CODE_TC"
+					use="required" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="TCM_ACORD_TYPE_CODE_TC">
+		<xsd:union
+			memberTypes="TCM_ACORD_TYPE_CODE TCM_ACORD_PRIVATE_CODE" />
+	</xsd:simpleType>
+	<xsd:simpleType name="TCM_ACORD_TYPE_CODE">
+		<xsd:restriction base="xsd:nonNegativeInteger" />
+	</xsd:simpleType>
+	<xsd:simpleType name="TCM_ACORD_PRIVATE_CODE">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:minInclusive value="1000000000" />
+			<xsd:maxInclusive value="1999999999" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="CountryCode" type="CountryCode_Type" />
+	<xsd:element name="PrimaryCitizenship" type="CountryCode_Type" />
+	<xsd:element name="DualCitizenship" type="TCM_ACORD_TC" />
+	<xsd:element name="ResidentialAddressInd" type="xsd:string" />
+	<xsd:element name="Pin" type="xsd:string" />
+	<xsd:element name="LoyaltyLevel" type="TCM_ACORD_TC" />
+	<xsd:element name="IsInitialPin" type="TCM_ACORD_TC" />
+	<xsd:element name="IsTier1Agent" type="TCM_ACORD_TC" />
+	<xsd:element name="IsPlatinumAgent" type="TCM_ACORD_TC" />
+	<xsd:element name="PlatinumPin" type="xsd:string" />
+	<xsd:element name="PlatinumVDN" type="xsd:string" />
+	<xsd:element name="DirectoryID" type="xsd:string" />
+	<xsd:element name="FirstSaleDate" type="xsd:date" />
+	<xsd:element name="WithdrawalAmtCalcMethod" type="xsd:string" />
+	<xsd:element name="IsPolicyOwner" type="TCM_ACORD_TC" />
+	<xsd:complexType
+		name="TCM_AdditionalInterestRateInfo_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="PremiumAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="PremiumEffDate" type="xsd:date"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="PremiumAmt" type="xsd:string" />
+	<xsd:element name="PremiumEffDate" type="xsd:date" />
+	<xsd:complexType name="TCM_Rider_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="AnnualGuarIncomeAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="GuaranteedMinIncomeBenefit"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="IncomeEnhRiderNotification"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="SMToRIC" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="DeathBeneOpt" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="RiderPages" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="InitialPremAmt" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element ref="WBMultiplierBenefitIndicator"
+				minOccurs="0" />
+			<xsd:element name="WBMultiplierBenefitAmount"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="WBMultiplierDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="InvestmentStrategyMethod"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="WithdrawalOptionIndicator"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="WithdrawalOptionLifeFreePct1"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="WithdrawalOptionLifeFreePct2"
+				type="xsd:decimal" minOccurs="0" />
+			<xsd:element name="WithdrawalOptionDuration1"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="LifeFreePct1LockDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="LifeFreePct2LockDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="ForLifeMinimumRemainingWithdrawalLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="MaximumAnnualWithdrawalLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="TotalWithdrawalBaseLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="MinimumAnnuitizationLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="PBLifeFreePercentageLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="LifeFreePercentageLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="GuaranteedFutureValueLiteral"
+				type="xsd:string" minOccurs="0" />
+			<xsd:element name="IncomeEnhRiderOption" type="TCM_ACORD_TC"
+				minOccurs="0" />
+			<xsd:element name="JointBenefitInd" type="TCM_ACORD_TC"
+				minOccurs="0" />
+			<!-- Added below 3 elements for project 30007 - November release -->
+			<xsd:element name="HighestMVAVAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="HighestMVAVLiteral" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="HighestMVAVDate" type="xsd:date"
+				minOccurs="0" />
+			<!-- Added below 2 elements for project 30408  -->
+			<xsd:element name="StepUpValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="GrowthValue" type="xsd:decimal"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="IncomeEnhRiderOption" type="TCM_ACORD_TC" />
+	<xsd:element name="JointBenefitInd" type="TCM_ACORD_TC" />
+
+	<xsd:complexType name="TCM_Policy_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="BeneInfo" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="TransPlusDisclosure" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="ReplacingCompany" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="UpdateDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="UpdateNotes" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_ApplicationInfo_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="ApplnRecdDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="NextPlannedFollowUpDate" type="xsd:date"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_FinancialActivity_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="AnticipatedPremAmt" type="xsd:decimal"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_Investment_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="IndexValue" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="IndexDate" type="xsd:date" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TCM_CarrierAppointment_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="LOADateSentToCarrier" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="LOATrackNo" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="AgencyName" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="AnntyAddressChgAllowed" type="xsd:string" />
+	<xsd:complexType name="TCM_RequirementInfo_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="LOADateSentToCarrier" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="LOATrackingNumber" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="NextPlannedFollowUpDate" type="xsd:date"
+				minOccurs="0" />
+			<xsd:element name="EvaluationFaceAmount" type="xsd:decimal"
+				minOccurs="0" />
+			<xsd:element name="ReplacingCompany" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="MailResSameInd" type="TCM_ACORD_TC" />
+	<xsd:element name="NonResidentAlienInd" type="TCM_ACORD_TC" />
+	<xsd:element name="WBMultiplierBenefitIndicator"
+		type="TCM_ACORD_TC" />
+	<xsd:complexType name="TCM_RateOfReturn_OLifEExtension">
+		<xsd:sequence>
+			<xsd:element name="BeginPolicyBal" type="xsd:double" />
+			<xsd:element name="EndPolicyBal" type="xsd:double" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

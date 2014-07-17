@@ -1,0 +1,127 @@
+REQUEST
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:oas="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:acor="http://tcmservices.aegonusa.com/AcordServices">
+   <soapenv:Header>
+      <acor:MessageHeader>
+         <acor:MessageName>?</acor:MessageName>
+         <acor:LoginInfo>
+            <acor:UserID>GG</acor:UserID>
+            <acor:UserSSN>?</acor:UserSSN>
+            <acor:UserGUID>121341414141</acor:UserGUID>
+            <acor:SessionID>f89df89sf</acor:SessionID>
+         </acor:LoginInfo>
+      </acor:MessageHeader>
+      <oas:Security>
+         <oas:UsernameToken>
+            <oas:Username>uuuuuu</oas:Username>
+            <oas:Password>pppppp</oas:Password>
+         </oas:UsernameToken>
+      </oas:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns0:AddressChange xmlns:ns0="http://tcmservices.aegonusa.com/AcordServices/Acord186Service/1">
+         <TXLife xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ACORD.org/Standards/Life/2">
+            <TXLifeRequest>
+               <TransRefGUID>AJIT-186-TEST-00113</TransRefGUID>
+               <TransType tc="186">Party Update</TransType>
+               <TransExeDate>2014-01-28</TransExeDate>
+               <TransExeTime>18:34:50.4218311-06:00</TransExeTime>
+               <TestIndicator tc="1">True</TestIndicator>
+               <ChangeSubType>
+                  <ChangeTC tc="30">Change Address</ChangeTC>
+               </ChangeSubType>
+               <OLifE>
+                  <Holding id="H1">
+                     <HoldingTypeCode tc="1">Asset/Liability</HoldingTypeCode>
+                     <Policy>
+                        <CarrierAdminSystem tc="16">any data can be here</CarrierAdminSystem>
+                        <PolNumber>123456789AB</PolNumber>
+                        <CarrierCode>AEG</CarrierCode>
+                        <ProductCode>A2</ProductCode>
+                     </Policy>
+                  </Holding>
+                  <Party id="Party_1">
+                     <GovtID>999999999</GovtID>
+                     <GovtIDTC tc="1">SSN</GovtIDTC>
+                     <Person>
+                        <Citizenship tc="1"/>
+                        <OLifEExtension>
+                           <DualCitizenship tc="2">abd</DualCitizenship>
+                           <PrimaryCitizenship tc="1">abc1</PrimaryCitizenship>
+                        </OLifEExtension>
+                     </Person>
+                     <Address DataRep="Full">
+                        <AddressTypeCode tc="17">Mailing</AddressTypeCode>
+                        <Line1>4333 EDGEWOOD RD NE</Line1>
+                        <Line2>ATTN: T22B TEST2</Line2>
+                       <Line3/>
+                        <City>HIRAM</City>
+                        <AddressStateTC tc="41">Ohio</AddressStateTC>
+                        <Zip>44234</Zip>
+                        <AddressCountryTC tc="1">United States of America</AddressCountryTC>
+                        <PrefAddr tc="1">True</PrefAddr>
+                     </Address>
+				 <Address DataRep="Full">
+                        <AddressTypeCode tc="1">Residence</AddressTypeCode>
+                        <Line1>4333 EDGEWOOD RD NE</Line1>
+                        <Line2>ATTN: T22B TEST2</Line2>
+                       <Line3/>
+                        <City>HIRAM</City>
+                        <AddressStateTC tc="41">Ohio</AddressStateTC>
+                        <Zip>44234</Zip>
+                        <AddressCountryTC tc="1">United States of America</AddressCountryTC>
+                        <PrefAddr tc="1">True</PrefAddr>
+                     </Address>
+                  </Party>
+               </OLifE>
+            </TXLifeRequest>
+         </TXLife>
+      </ns0:AddressChange>
+</soapenv:Body>
+</soapenv:Envelope>
+
+
+RESPONSE
+
+Success:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <p:AddressChangeResponse xmlns:p="http://tcmservices.aegonusa.com/AcordServices/Acord186Service/1">
+         <ns0:TXLife xmlns:ns0="http://ACORD.org/Standards/Life/2">
+            <ns0:TXLifeResponse>
+               <ns0:TransRefGUID>AJIT-186-TEST-00120</ns0:TransRefGUID>
+               <ns0:TransType tc="186">Party Update</ns0:TransType>
+               <ns0:TransExeDate>2014-03-25</ns0:TransExeDate>
+               <ns0:TransExeTime>09:33:46-0500</ns0:TransExeTime>
+               <ns0:TransResult>
+                  <ns0:ResultCode tc="1">Success</ns0:ResultCode>
+                  <ns0:ResultInfo/>
+               </ns0:TransResult>
+            </ns0:TXLifeResponse>
+         </ns0:TXLife>
+      </p:AddressChangeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Failure:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <p:AddressChangeResponse xmlns:p="http://tcmservices.aegonusa.com/AcordServices/Acord186Service/1">
+         <ns0:TXLife xmlns:ns0="http://ACORD.org/Standards/Life/2">
+            <ns0:TXLifeResponse>
+               <ns0:TransRefGUID>AJIT-186-TEST-00113</ns0:TransRefGUID>
+               <ns0:TransType tc="186">Party Update</ns0:TransType>
+               <ns0:TransExeDate>2014-03-25</ns0:TransExeDate>
+               <ns0:TransExeTime>09:32:44.130-05:00</ns0:TransExeTime>
+               <ns0:TransResult>
+                  <ns0:ResultCode tc="5">Failure</ns0:ResultCode>
+                  <ns0:ResultInfo>
+                     <ns0:ResultInfoCode tc="2044">Duplicate of a previous transaction</ns0:ResultInfoCode>
+                     <ns0:ResultInfoDesc>A transaction with the same TransRefGUID has already been processed</ns0:ResultInfoDesc>
+                  </ns0:ResultInfo>
+               </ns0:TransResult>
+            </ns0:TXLifeResponse>
+         </ns0:TXLife>
+      </p:AddressChangeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

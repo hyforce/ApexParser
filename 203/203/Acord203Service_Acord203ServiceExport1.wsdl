@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="Acord203Service" targetNamespace="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1" xmlns:bons0="http://Acord203Service/Acord203Service" xmlns:bons1="http://ACORD.org/Standards/Life/2" xmlns:bons2="http://Acord203Service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1" xmlns:bons0="http://tcmservices.aegonusa.com/AcordServices/Acord203Service/1">
+      <xsd:import namespace="http://Acord203Service" schemaLocation="FailureBO.xsd"/>
+      <xsd:import namespace="http://ACORD.org/Standards/Life/2" schemaLocation="Acord203ReqResp.xsd"/>
+      <xsd:element name="PolicyInquiry">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TXLife" nillable="true" type="bons1:TXLife_Type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PolicyInquiryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TXLife" nillable="true" type="bons1:TXLife_Type"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PolicyInquiryFault1" nillable="true" type="bons2:FailureBO"/>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="PolicyInquiryRequestMsg">
+    <wsdl:part element="tns:PolicyInquiry" name="PolicyInquiryParameters"/>
+  </wsdl:message>
+    <wsdl:message name="PolicyInquiryResponseMsg">
+    <wsdl:part element="tns:PolicyInquiryResponse" name="PolicyInquiryResult"/>
+  </wsdl:message>
+    <wsdl:message name="PolicyInquiry_PolicyInquiryFault1Msg">
+    <wsdl:part element="tns:PolicyInquiryFault1" name="PolicyInquiryFault1"/>
+  </wsdl:message>
+    <wsdl:portType name="Acord203Service">
+    <wsdl:operation name="PolicyInquiry">
+      <wsdl:input message="tns:PolicyInquiryRequestMsg" name="PolicyInquiryRequest"/>
+      <wsdl:output message="tns:PolicyInquiryResponseMsg" name="PolicyInquiryResponse"/>
+      <wsdl:fault message="tns:PolicyInquiry_PolicyInquiryFault1Msg" name="PolicyInquiryFault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+    <wsdl:binding name="Acord203ServiceExport1_Acord203ServiceHttpBinding" type="tns:Acord203Service">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PolicyInquiry">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PolicyInquiryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PolicyInquiryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PolicyInquiryFault1">
+        <soap:fault name="PolicyInquiryFault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+    <wsdl:service name="Acord203ServiceExport1_Acord203ServiceHttpService">
+    <wsdl:port binding="tns:Acord203ServiceExport1_Acord203ServiceHttpBinding" name="Acord203ServiceExport1_Acord203ServiceHttpPort">
+      <soap:address location="http://localhost:9080/Acord203ServiceWeb/sca/Acord203ServiceExport1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
